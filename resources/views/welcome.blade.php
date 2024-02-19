@@ -15,9 +15,4 @@
     </div>
 </div>
 
-<div class="content">
-    <div class="container">
-        <h3>Footer</h3>
-    </div>
-</div>
 @endsection

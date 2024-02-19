@@ -20,9 +20,6 @@ nav {
 }
 
 // Homepage
-main {
-    height: 80vh;
-    .jumbotron {
-        background-color: $main_bg;
-    }
+body {
+    background-color: $main_bg;
 }
