@@ -17,4 +17,8 @@ class Dish extends Model
         $this->attributes['name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);
     }
+
+    public function restaurant() {
+        return $this->belongsTo(Restaurant::class);
+    }
 }
