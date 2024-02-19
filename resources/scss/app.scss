@@ -1,1 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+
+// Navbar
+nav {
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+}
