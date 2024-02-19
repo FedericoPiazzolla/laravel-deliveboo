@@ -1,11 +1,28 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
 
 // Navbar
 nav {
+    background-color: $main_dark_green;
     .logo_laravel {
         max-width: 100%;
         img {
             max-width: 25%;
         }
+    }
+    .navbar-nav {
+        .nav-item {
+            a {
+                color: $main_orange;
+            }
+        }
+    }
+}
+
+// Homepage
+main {
+    height: 80vh;
+    .jumbotron {
+        background-color: $main_bg;
     }
 }
