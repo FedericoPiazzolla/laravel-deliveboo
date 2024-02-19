@@ -25,9 +25,9 @@
             <td>{{ $dish->name }}</td>
             <td>{{ $dish->price }}</td>
             <td>
-                <a class="btn btn-primary"
+                {{-- <a class="btn btn-primary"
                     href="{{ route('admin.dishes.show', ['dish' => $dish->slug]) }}">dettagli
-                </a>
+                </a> --}}
                 {{-- <a class="btn btn-success"
                     href="{{ route('admin.dishes.edit', ['dish' => $dish->slug]) }}"><i
                         class="fa-solid fa-pen"></i>

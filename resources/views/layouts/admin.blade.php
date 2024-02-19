@@ -59,14 +59,14 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column mt-2">
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'link_selected' : '' }}"
-                                    href="{{ route('dashboard') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'link_selected' : '' }}"
+                                    href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'dishes' ? 'link_selected' : '' }}"
-                                    href="{{ route('dashboard') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == '' ? 'admin.dishes.index' : '' }}"
+                                    href="{{ route('admin.dishes.index') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> I Miei Piatti
                                 </a>
                             </li>
