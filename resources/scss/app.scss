@@ -55,6 +55,7 @@ body {
 // header
 header {
     background-color: $main_red;
+    height: 100px;
 
     .logo_laravel {
         max-width: 100%;
@@ -71,6 +72,9 @@ header {
 }
 
 // main
+.ms_main-content {
+    height: calc(100vh - 100px);
+}
 .dashboard_class {
     .card-header {
         background-color: $main_dark_green;
@@ -87,6 +91,7 @@ header {
     background-color: $main_red;
     border: 2px solid $main_dark_green;
     border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 
     a {
         color: $main_bg;

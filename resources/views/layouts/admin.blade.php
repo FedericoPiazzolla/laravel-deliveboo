@@ -26,7 +26,7 @@
 <body>
     <div id="app">
 
-        <header class="navbar navbar-dark sticky-top flex-md-nowrap p-2 mb-4 shadow">
+        <header class="navbar navbar-dark sticky-top flex-md-nowrap p-2 mb-0 shadow">
             <div class="container">
 
             
@@ -50,8 +50,8 @@
             </div>
         </header>
 
-        <div class="container-fluid vh-100">
-            <div class="row h-100">
+        <div class="container-fluid ms_main-content">
+            <div class="row h-100 py-5">
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
         aggiungere i link necessari giorno per giorno
         -->
@@ -76,7 +76,7 @@
                     </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 p-5">
                     @yield('content')
                 </main>
             </div>
