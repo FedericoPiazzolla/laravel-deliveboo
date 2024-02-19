@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == '' ? 'admin.dishes.index' : '' }}"
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.dishes.index' ? 'link_selected' : '' }}"
                                     href="{{ route('admin.dishes.index') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> I Miei Piatti
                                 </a>
