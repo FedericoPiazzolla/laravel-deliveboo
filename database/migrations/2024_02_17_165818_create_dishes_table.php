@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->string('dish_img')->nullable();
             $table->decimal('price', 4, 2);
             $table->boolean('available');
             $table->timestamps();
