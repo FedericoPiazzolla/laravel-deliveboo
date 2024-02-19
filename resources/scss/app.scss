@@ -47,3 +47,23 @@ body {
         }
     }
 }
+
+// DASHBOARD
+
+// header
+header {
+    background-color: $main_red;
+
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+
+    .navbar-nav {
+        a {
+            color: $main_bg;
+        }
+    }
+}
