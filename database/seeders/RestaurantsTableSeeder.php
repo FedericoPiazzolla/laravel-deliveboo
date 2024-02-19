@@ -20,11 +20,11 @@ class RestaurantsTableSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) 
         {
             $restaurant = new Restaurant();
-            $restaurant->email = $faker->email();
-            $restaurant->company_name = $faker->sentence(2);
+            $restaurant->restaurant_email = $faker->email();
+            $restaurant->restaurant_name = $faker->sentence(2);
             $restaurant->slug = Str::slug($restaurant->company_name);
-            $restaurant->image = "";
-            $restaurant->address = $faker->address();
+            $restaurant->restaurant_image = "";
+            $restaurant->restaurant_address = $faker->address();
             $restaurant->save();
         }
     }
