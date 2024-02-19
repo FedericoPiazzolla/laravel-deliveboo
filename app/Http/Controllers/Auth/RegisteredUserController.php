@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'surname' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'vat_number' => ['required', 'string', 'max:13', 'unique'],
+            'vat_number' => ['required', 'string', 'max:13', 'unique:'.User::class],
         ]);
 
         // Creazione dell'istanza della classe User con riempimento dei dati dalla richiesta
