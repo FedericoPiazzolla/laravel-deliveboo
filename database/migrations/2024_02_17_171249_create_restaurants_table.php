@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('company_name')->unique();
+            $table->string('resturant_email')->unique();
+            $table->string('resturant_name')->unique();
             $table->string('slug');
-            $table->string('image');
-            $table->string('address');   
+            $table->string('resturant_image');
+            $table->string('resturant_address');   
             $table->timestamps();
         });
     }
