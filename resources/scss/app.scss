@@ -1,1 +1,49 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
+
+// Navbar
+nav {
+    background-color: $main_dark_green;
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            a {
+                color: $main_orange;
+            }
+        }
+    }
+}
+
+// Homepage
+body {
+    background-color: $main_bg;
+}
+
+// Login Page
+
+.card {
+    .card-header {
+        background-color: $main_dark_green;
+        color: $main_orange;
+    }
+
+    .card-body {
+        label {
+            color: $main_dark_green;
+        }
+        button {
+            background-color: $main_dark_green;
+            color: $main_orange;
+        }
+
+        #forgot-psw {
+            text-decoration: none;
+            color: $main_dark_green;
+        }
+    }
+}
