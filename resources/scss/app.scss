@@ -70,6 +70,7 @@ header {
     }
 }
 
+// main
 .dashboard_class {
     .card-header {
         background-color: $main_dark_green;
@@ -78,5 +79,24 @@ header {
 
     .card-body {
         color: $main_dark_green;
+    }
+}
+
+// sidebar
+.sidebar {
+    background-color: $main_red;
+    border: 2px solid $main_dark_green;
+    border-top-right-radius: 2rem;
+
+    a {
+        color: $main_bg;
+    }
+    a:hover {
+        color: $main_dark_green;
+        background-color: $main_bg;
+    }
+
+    .link_selected {
+        background-color: $main_dark_green;
     }
 }

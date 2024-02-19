@@ -25,7 +25,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-                <div class="logo_laravel">
+                <div class="logo_laravel col-4">
                     <a href="{{ url('/') }}">
                         <img src="{{ Vite::asset('/resources/images/deliveboo-logo.png')}}" alt="">
                     </a>
