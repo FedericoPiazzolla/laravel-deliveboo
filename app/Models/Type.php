@@ -20,4 +20,9 @@ class Type extends Model
         $this->attributes['name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);  
     }
+
+    public function restaurants()
+    {
+        return $this->belongsToMany(Restaurant::class);
+    }
 }
