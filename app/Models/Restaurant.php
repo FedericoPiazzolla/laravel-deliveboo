@@ -9,10 +9,10 @@ use Illuminate\Support\Str;
 class Restaurant extends Model
 {
     use HasFactory;
-    protected $fillable = ['email', 'company_name','slug','address'];
-    public function setNameAttribute($_company_name){
-        $this->attributes['company_name'] = $_company_name;
-        $this->attributes['slug'] = Str::slug($_company_name);
+    protected $fillable = ['restaurant_email', 'restaurant_name','slug','restaurant_address'];
+    public function setNameAttribute($_restaurant_name){
+        $this->attributes['restaurant_name'] = $_restaurant_name;
+        $this->attributes['slug'] = Str::slug($_restaurant_name);
 
     }
 

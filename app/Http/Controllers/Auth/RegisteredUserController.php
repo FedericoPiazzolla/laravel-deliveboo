@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use App\Models\User;
+use App\Models\Restaurant;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class RegisteredUserController extends Controller
 {
@@ -54,6 +57,27 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+
+        $form_data = $request->all();
+
+        
+        $new_restaurant = new Restaurant();
+        
+        // $new_restaurant->restaurant_email = $request["restaurant_email"];
+        // $new_restaurant->restaurant_name = $request["restaurant_name"];
+        // $new_restaurant->restaurant_image = $request["restaurant_image"];
+        // $new_restaurant->restaurant_address = $request["restaurant_address"];
+        // $new_restaurant->user_id = $user->id;
+
+        $new_restaurant->fill($form_data);
+        $new_restaurant->slug = Str::slug($new_restaurant->restaurant_name);
+        if($request->hasFile('restaurant_image')) {
+            $path = Storage::put('uploads', $request->restaurant_image);
+            $new_restaurant->restaurant_image = $path;
+        }
+        $new_restaurant->user_id = $user->id;
+
+        $new_restaurant->save();
 
         Auth::login($user);
 
