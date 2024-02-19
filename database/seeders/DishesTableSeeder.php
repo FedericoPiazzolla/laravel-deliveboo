@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
-class DishTableSeeder extends Seeder
+class DishesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
