@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-// use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 use Faker\Provider\it_IT\Company as Faker;
 
 class UsersTableSeeder extends Seeder
@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
             $new_user = new User();
 
             $new_user->fill($user);
+            $new_user->password = Hash::make($user["password"]);
             $new_user->vat_number = $faker->vat();
 
             $new_user->save();
