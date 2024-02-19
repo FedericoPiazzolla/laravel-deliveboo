@@ -12,11 +12,12 @@ class Type extends Model
 
     protected $fillable = [
         'name',
+        'slug',
     ];
 
     public function SetNameAttribute($_name)
     {
         $this->attributes['name'] = $_name;
-        $this->attributes['slug'] = Str::slug('name');  
+        $this->attributes['slug'] = Str::slug($_name);  
     }
 }
