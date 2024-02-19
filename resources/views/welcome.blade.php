@@ -1,23 +1,23 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="jumbotron p-5 mb-4 bg-light rounded-3">
-    <div class="container py-5">
-        <div class="logo_laravel">
-            
+<div class="jumbotron p-5 mb-4 rounded-3">
+    <div class="container">
+        <div class="hero-img text-center">
+            <img src="{{ Vite::asset('/resources/images/hero-rider.png')}}" alt="">
         </div>
-        <h1 class="display-5 fw-bold">
-            Welcome to Laravel+Bootsrap 5
+        <h1 class="display-5 fw-bold mt-5">
+            Welcome to DeliveBoo
         </h1>
 
-        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-        <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        <p class="col fs-4 mt-5">Desideri espandere la tua attività ristorativa? Unisciti a noi e scopri i vantaggi della nostra piattaforma di consegna alimentare per locali! Con la nostra soluzione personalizzata, potrai aumentare la tua visibilità e raggiungere nuovi clienti senza investimenti aggiuntivi. Gestisci gli ordini in modo semplice ed efficiente, ottieni accesso a dati analitici dettagliati e porta la tua attività al prossimo livello con noi! Contattaci oggi stesso per saperne di più su come diventare parte della nostra rete di partner.</p>
+    
     </div>
 </div>
 
 <div class="content">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
+        <h3>Footer</h3>
     </div>
 </div>
 @endsection
