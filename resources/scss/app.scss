@@ -23,3 +23,27 @@ nav {
 body {
     background-color: $main_bg;
 }
+
+// Login Page
+
+.card {
+    .card-header {
+        background-color: $main_dark_green;
+        color: $main_orange;
+    }
+
+    .card-body {
+        label {
+            color: $main_dark_green;
+        }
+        button {
+            background-color: $main_dark_green;
+            color: $main_orange;
+        }
+
+        #forgot-psw {
+            text-decoration: none;
+            color: $main_dark_green;
+        }
+    }
+}
