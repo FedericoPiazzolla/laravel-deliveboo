@@ -8,8 +8,11 @@
                 <div class="card-header">{{ __('Registrazione') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+
+                        {{-- DATI RISTORATORE --}}
+                        <h2>Dati Utente</h2>
 
                         <div class="mb-4 row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
@@ -88,6 +91,88 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        {{-- / DATI RISTORATORE --}}
+
+                        {{--  DATI RISTORANTE --}}
+                        <h2>Dati Ristorante</h2>
+
+                        <div class="mb-4 row">
+                            <label for="restaurant_name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant_name" type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{ old('restaurant_name') }}" required autocomplete="name" autofocus>
+
+                                @error('restaurant_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="restaurant_email" class="col-md-4 col-form-label text-md-right">{{ __('Email Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant_email" type="text" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_email" value="{{ old('restaurant_email') }}" required autocomplete="name" autofocus>
+
+                                @error('restaurant_email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        {{-- IMAGE --}}
+                        <div class="mb-4 row">
+                            <label for="restaurant_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant_image" type="file" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus>
+
+                                @error('restaurant_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        {{-- / IMAGE --}}
+
+                        <div class="mb-4 row">
+                            <label for="restaurant_address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant_address" type="text" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_address" value="{{ old('restaurant_address') }}" required autocomplete="name" autofocus placeholder="Via Tuo Ristorante, CAP, Città">
+
+                                @error('restaurant_address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        {{-- TYPES --}}
+                        <div class="mb-3">
+                           <h5>Seleziona il tipo di cuina del tuo ristorante:</h5>
+                           <div class="form-check">
+                                @foreach ($types as $type)
+                                    <div>
+                                        <input type="checkbox" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
+                                    <label for="type-{{ $type-id }}">
+                                        {{ $type->type_name }}
+                                    </label>
+                                    </div>  
+                                @endforeach
+                           </div>
+                        </div>
+                        {{-- / TYPES --}}
+
+
+                        {{-- / DATI RISTORANTE --}}
 
                         <div class="mt-5 row m-0 text-center ">
                             <div class="col offset-md-4 m-0">
@@ -96,6 +181,7 @@
                                 </button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>

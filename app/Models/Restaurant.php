@@ -15,4 +15,12 @@ class Restaurant extends Model
         $this->attributes['slug'] = Str::slug($_company_name);
 
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function dishes() {
+        return $this->hasMany(Dish::class);
+    }
 }
