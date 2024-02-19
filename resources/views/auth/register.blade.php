@@ -162,8 +162,8 @@
                                 @foreach ($types as $type)
                                     <div>
                                         <input type="checkbox" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
-                                    <label for="type-{{ $type-id }}">
-                                        {{ $type->type_name }}
+                                    <label for="type-{{ $type->id }}">
+                                        {{ $type->name }}
                                     </label>
                                     </div>  
                                 @endforeach
