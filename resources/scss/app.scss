@@ -26,24 +26,77 @@ body {
 
 // Login Page
 
-.card {
-    .card-header {
-        background-color: $main_dark_green;
-        color: $main_orange;
-    }
-
-    .card-body {
-        label {
-            color: $main_dark_green;
-        }
-        button {
+.login_class {
+    .card {
+        .card-header {
             background-color: $main_dark_green;
             color: $main_orange;
         }
 
-        #forgot-psw {
-            text-decoration: none;
-            color: $main_dark_green;
+        .card-body {
+            label {
+                color: $main_dark_green;
+            }
+            button {
+                background-color: $main_dark_green;
+                color: $main_orange;
+            }
+
+            #forgot-psw {
+                text-decoration: none;
+                color: $main_dark_green;
+            }
         }
+    }
+}
+
+// DASHBOARD
+
+// header
+header {
+    background-color: $main_red;
+
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+
+    .navbar-nav {
+        a {
+            color: $main_bg;
+        }
+    }
+}
+
+// main
+.dashboard_class {
+    .card-header {
+        background-color: $main_dark_green;
+        color: $main_bg;
+    }
+
+    .card-body {
+        color: $main_dark_green;
+    }
+}
+
+// sidebar
+.sidebar {
+    background-color: $main_red;
+    border: 2px solid $main_dark_green;
+    border-top-right-radius: 2rem;
+
+    a {
+        color: $main_bg;
+    }
+    a:hover {
+        color: $main_dark_green;
+        background-color: $main_bg;
+    }
+
+    .link_selected {
+        background-color: $main_dark_green;
     }
 }
