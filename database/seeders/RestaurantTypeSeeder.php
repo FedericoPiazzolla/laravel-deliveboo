@@ -16,14 +16,14 @@ class RestaurantTypeSeeder extends Seeder
      */
     public function run()
     {
-        $restaurants = Restaurant::all();
+        // $restaurants = Restaurant::all();
 
         $restaurant_types = config('restaurants_types');
 
-        foreach ($restaurants as $restaurant) {
-            foreach ($restaurant_types as $restaurant_types_arr) {
-                $restaurant->types()->attach($restaurant_types_arr["type_id"]);
-            }
+        foreach ($restaurant_types as $restaurant_type) {
+            // dd($restaurant_type["type_id"]);
+            $restaurant = Restaurant::where('id', $restaurant_type["restaurant_id"])->first();
+            $restaurant->types()->attach($restaurant_type["type_id"]);
         }
     }
 }
