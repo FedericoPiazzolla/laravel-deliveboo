@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Dish;
+use App\Models\Type;
 
 class DishController extends Controller
 {
@@ -55,12 +56,13 @@ class DishController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+        $types = Type::all();
+        return view('admin.dishes.edit', compact('dish', 'types'));
     }
 
     /**
