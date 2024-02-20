@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDishRequest;
 use Illuminate\Http\Request;
 use App\Models\Dish;
+use App\Models\Type;
 
 class DishController extends Controller
 {
@@ -27,7 +29,8 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('admin.dishes.create');
     }
 
     /**
@@ -36,9 +39,16 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDishRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        $dish = new Dish();
+        $dish->fill($form_data);
+        $dish->available = true;
+        $dish->save();
+
+        return redirect()->route('admin.dishes.show', ['dishes' => $dish->slug]);
+
     }
 
     /**
@@ -47,8 +57,9 @@ class DishController extends Controller
      * @param  Dish $dish
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show( $slug)
     {
+        $dish = Dish::where('slug', $slug )->first();
         return view('admin.dishes.show',compact('dish'));
     }
 

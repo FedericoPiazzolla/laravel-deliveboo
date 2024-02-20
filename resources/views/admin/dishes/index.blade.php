@@ -4,7 +4,7 @@
 <h2>Lista dei piatti</h2>
 
 <div class="text-end">
-    <a class="btn" href="">Crea un nuovo piatto</a>
+    <a class="btn"  href="{{ route('admin.dishes.create') }}">Crea un nuovo piatto</a>
 </div>
 
 @if (count($dishes) > 0)
@@ -25,9 +25,9 @@
             <td>{{ $dish->name }}</td>
             <td>{{ $dish->price }}</td>
             <td>
-                {{-- <a class="btn btn-primary"
-                    href="{{ route('admin.dishes.show', ['dish' => $dish->slug]) }}">dettagli
-                </a> --}}
+              <a class="btn btn-primary"
+                    href="{{ route('admin.dishes.show', ['dishes' => $dish->slug]) }}">dettagli
+                </a> 
                 {{-- <a class="btn btn-success"
                     href="{{ route('admin.dishes.edit', ['dish' => $dish->slug]) }}"><i
                         class="fa-solid fa-pen"></i>

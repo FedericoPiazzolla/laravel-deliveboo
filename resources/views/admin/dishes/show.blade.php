@@ -12,7 +12,7 @@
             Slug: {{ $dish->slug }}
         </div> 
         <div class="mt-4">
-            Prezzo: {{ $dish->price }}
+            Prezzo: {{ $dish->price }} 
         </div> 
         <div class="mt-4">
             Disponibilità: {{ $dish->available }}
