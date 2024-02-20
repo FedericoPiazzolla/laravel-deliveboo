@@ -39,11 +39,17 @@ class RegisteredUserController extends Controller
         // Regole di validazione delle informazioni dell'utente
 
         $request->validate([
+
+            // user validations
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'vat_number' => ['required', 'string', 'max:13', 'unique:'.User::class],
+
+            // restaurant validations
+            'restaurant_image' => ['nullable', 'image', 'max:512'],
+            'restaurant_logo' => ['nullable', 'image', 'max:512']
         ]);
 
         // Creazione dell'istanza della classe User con riempimento dei dati dalla richiesta
@@ -62,18 +68,21 @@ class RegisteredUserController extends Controller
 
         
         $new_restaurant = new Restaurant();
-        
-        // $new_restaurant->restaurant_email = $request["restaurant_email"];
-        // $new_restaurant->restaurant_name = $request["restaurant_name"];
-        // $new_restaurant->restaurant_image = $request["restaurant_image"];
-        // $new_restaurant->restaurant_address = $request["restaurant_address"];
-        // $new_restaurant->user_id = $user->id;
 
+        // Controllo del caricamento del file restaurant_image nel form di creazione
         
         if($request->hasFile('restaurant_image')) {
             $path = Storage::put('uploads', $request->restaurant_image);
             $new_restaurant->restaurant_image = $path;
         }
+     
+         // Controllo del caricamento del file restaurant_logo nel form di creazione
+        
+         if($request->hasFile('restaurant_logo')) {
+            $path = Storage::put('uploads', $request->restaurant_logo);
+            $new_restaurant->restaurant_logo = $path;
+        }
+
         $new_restaurant->fill($form_data);
         $new_restaurant->slug = Str::slug($new_restaurant->restaurant_name);
         $new_restaurant->user_id = $user->id;
@@ -83,7 +92,7 @@ class RegisteredUserController extends Controller
         if($request->has('types')) {
             $new_restaurant->types()->attach($request->types);
         }
-        
+    
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
