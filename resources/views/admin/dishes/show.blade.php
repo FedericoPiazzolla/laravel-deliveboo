@@ -15,7 +15,7 @@
             Prezzo: {{ $dish->price }} 
         </div> 
         <div class="mt-4">
-            Disponibilità: {{ $dish->available }}
+            Disponibilità: {{ $dish->available ? 'Disponibile' : 'Non disponibile' }}
         </div> 
     </div>
 @endsection
