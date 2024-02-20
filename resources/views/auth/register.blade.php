@@ -126,7 +126,7 @@
 
                         {{-- IMAGE --}}
                         <div class="mb-4 row">
-                            <label for="restaurant_image" class="col-md-4 col-form-label text-md-right">{{ __('Logo Ristorante') }}</label>
+                            <label for="restaurant_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 
                             <div class="col-md-6">
                                 <input id="restaurant_image" type="file" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus>
@@ -138,7 +138,32 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="mb-3">
+                            <img id="preview_image" src="" alt="" style="max-width: 400px">
+                        </div>
                         {{-- / IMAGE --}}
+
+
+                        {{-- LOGO --}}
+                        <div class="mb-4 row">
+                            <label for="restaurant_logo" class="col-md-4 col-form-label text-md-right">{{ __('Logo Ristorante') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="restaurant_logo" type="file" class="form-control @error('restaurant_logo') is-invalid @enderror" name="restaurant_logo" value="{{ old('restaurant_logo') }}" required autocomplete="name" autofocus>
+
+                                @error('restaurant_logo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <img id="preview_logo" src="" alt="" style="max-width: 400px">
+                        </div> 
+                        {{-- / LOGO --}}
 
                         <div class="mb-4 row">
                             <label for="restaurant_address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Ristorante') }}</label>
