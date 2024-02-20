@@ -16,8 +16,12 @@
 
                         <h4> Bentornato {{ Auth::user()->name }}</h4>
 
-                        <p class="mt-4">Qui hai il controllo totale sui piatti offerti nei tuoi ristoranti. Modifica, aggiungi o elimina piatti con facilità per garantire un'esperienza culinaria impeccabile ai tuoi clienti.</p>
+                        <p class="mt-4">Qui hai il controllo totale sui piatti offerti nel tuo ristorante <b class="restaurant_name">{{ $restaurant->restaurant_name}}</b> . Modifica, aggiungi o elimina piatti con facilità per garantire un'esperienza culinaria impeccabile ai tuoi clienti.</p>
                         <p>Sii creativo e aggiungi nuove delizie gastronomiche per stupire i tuoi clienti e far crescere il tuo business. Ricorda, la tua passione per la cucina si riflette nei piatti che offri!</p>
+                        <h3>
+                            
+                            
+                        </h3>
                     </div>
                 </div>
             </div>
