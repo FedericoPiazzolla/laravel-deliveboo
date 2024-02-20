@@ -83,6 +83,10 @@ header {
 
     .card-body {
         color: $main_dark_green;
+
+        .restaurant_name {
+            color: $main_red;
+        }
     }
 }
 
