@@ -4,18 +4,27 @@
 
 @section('content')
 <div class="container-mt-5">
-  <a class="my-5 btn btn-success" href="{{ route('admin.dishes.index') }}">&LeftArrow; back</a>
-  <h2 class="flex-grow-1">Edit Page</h2>
+  <a class="my-5 btn btn-success" href="{{ route('admin.dishes.index') }}">&LeftArrow; Indietro</a>
+  <h2 class="flex-grow-1">Pagina di Modifica</h2>
 
   <form action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
     <div class="mb-3 has-validation">
-      <label for="name" class="form-label">name</label>
+      <label for="name" class="form-label">Nome</label>
       <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}">
 
       @error('title')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+    </div>
+
+    <div class="mb-3 has-validation">
+      <label for="price" class="form-label">Prezzo</label>
+      <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price">
+
+      @error('price')
         <div class="invalid-feedback">{{ $message }}</div>
       @enderror
     </div>
@@ -27,28 +36,23 @@
     </div> --}}
     {{-- /image --}}
 
-    {{-- Type --}}
-    <div class="mb-3 has-validation">
-        <h5>Seleziona il tipo di cuina del tuo ristorante:</h5>
-        <div class="form-check">
-             @foreach ($types as $type)
-                 <div>
-                    <input type="checkbox" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
-                 <label for="type-{{ $type->id }}">
-                    {{ $type->name }}
-                 </label>
-                 </div>  
-             @endforeach
-        </div>
+    {{-- Avaliable --}}
+    <div class="mb-3">
+      <label for="available" class="form-label">Disponibilità</label>
+      <select class="form-select" id="available" name="available">
+        <option value="1" {{ old('available', $dish->available) == 1 ? 'selected' : '' }}>Si</option>
+        <option value="0" {{ old('available', $dish->available) == 0 ? 'selected' : '' }}>No</option>
+      </select>
     </div>
-    {{-- /Type --}}
+    {{-- /Avaliable --}}
 
     <div class="mb-3">
-      <label for="description" class="form-label">description</label>
+      <label for="description" class="form-label">Descrizione</label>
       <textarea class="form-control" name="description" id="description" rows="3">{{ old('description', $dish->description) }}</textarea>
     </div>
+   
 
-    <button class="btn btn-warning" type="submit">Modify</button>
+    <button class="btn btn-warning" type="submit">Modifica</button>
   </form>
 </div>
 

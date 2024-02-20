@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Http\Request;
 use App\Models\Dish;
 use App\Models\Type;
@@ -61,20 +62,23 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        $types = Type::all();
-        return view('admin.dishes.edit', compact('dish', 'types'));
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDishRequest $request, Dish $dish)
     {
-        //
+        $form_data = $request->validated();
+
+        $dish->update($form_data);
+
+        return redirect()->route('admin.dishes.show', ['dish' => $dish->slug]);        
     }
 
     /**
