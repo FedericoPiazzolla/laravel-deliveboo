@@ -69,16 +69,21 @@ class RegisteredUserController extends Controller
         // $new_restaurant->restaurant_address = $request["restaurant_address"];
         // $new_restaurant->user_id = $user->id;
 
-        $new_restaurant->fill($form_data);
-        $new_restaurant->slug = Str::slug($new_restaurant->restaurant_name);
+        
         if($request->hasFile('restaurant_image')) {
             $path = Storage::put('uploads', $request->restaurant_image);
             $new_restaurant->restaurant_image = $path;
         }
+        $new_restaurant->fill($form_data);
+        $new_restaurant->slug = Str::slug($new_restaurant->restaurant_name);
         $new_restaurant->user_id = $user->id;
-
+        
         $new_restaurant->save();
-
+        
+        if($request->has('types')) {
+            $new_restaurant->types()->attach($request->types);
+        }
+        
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
