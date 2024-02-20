@@ -46,11 +46,13 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDishRequest $request)
+    public function store(StoreDishRequest $request, Dish $dish)
     {
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
         $form_data = $request->validated();
         $dish = new Dish();
         $dish->fill($form_data);
+        $dish->restaurant_id = $restaurant->id;
         $dish->available = true;
         $dish->save();
 
@@ -64,9 +66,12 @@ class DishController extends Controller
      * @param  Dish $dish
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
-    {
-        $dish = Dish::where('slug', $slug )->first();
+    public function show(Dish $dish)
+    {   
+        if($dish->restaurant->user_id !== Auth::user()->id) {
+            abort(404);
+        }
+        $dish = Dish::where('slug', $dish->slug )->first();
         return view('admin.dishes.show',compact('dish'));
     }
 
@@ -78,6 +83,9 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        if($dish->restaurant_id->user_id !== Auth::user()->id) {
+            abort(404);
+        }
         return view('admin.dishes.edit', compact('dish'));
     }
 
