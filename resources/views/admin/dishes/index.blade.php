@@ -26,12 +26,11 @@
             <td>{{ $dish->price }}</td>
             <td>
               <a class="btn btn-primary"
-                    href="{{ route('admin.dishes.show', ['dishes' => $dish->slug]) }}">dettagli
+                    href="{{ route('admin.dishes.show', ['dish' => $dish->slug]) }}">dettagli
                 </a> 
-                {{-- <a class="btn btn-success"
-                    href="{{ route('admin.dishes.edit', ['dish' => $dish->slug]) }}"><i
-                        class="fa-solid fa-pen"></i>
-                </a> --}}
+                <a class="btn btn-success" style="background-color: #fd8d14" href="{{ route('admin.dishes.edit', ['dish' => $dish->slug]) }}">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
             </td>
         </tr>
     @endforeach

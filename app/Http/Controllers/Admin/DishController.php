@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Http\Request;
 use App\Models\Dish;
+use App\Models\Restaurant;
 use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -18,7 +21,10 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $user = User::where('id', Auth::user()->id)->first();
+        $restaurant = Restaurant::where('user_id', $user->id)->first();
+        $dishes = Dish::all()->where('restaurant_id', $restaurant->id);
+
         return view('admin.dishes.index', compact('dishes'));
 
     }
@@ -48,7 +54,7 @@ class DishController extends Controller
         $dish->available = true;
         $dish->save();
 
-        return redirect()->route('admin.dishes.show', ['dishes' => $dish->slug]);
+        return redirect()->route('admin.dishes.show', ['dish' => $dish->slug]);
 
     }
 
@@ -58,7 +64,7 @@ class DishController extends Controller
      * @param  Dish $dish
      * @return \Illuminate\Http\Response
      */
-    public function show( $slug)
+    public function show($slug)
     {
         $dish = Dish::where('slug', $slug )->first();
         return view('admin.dishes.show',compact('dish'));
