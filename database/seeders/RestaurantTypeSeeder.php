@@ -18,11 +18,11 @@ class RestaurantTypeSeeder extends Seeder
     {
         $restaurants = Restaurant::all();
 
-        $types = Type::all();
+        $restaurant_types = config('restaurants_types');
 
         foreach ($restaurants as $restaurant) {
-            foreach ($types as $type) {
-                $restaurant->types()->sync($restaurant->id, $type->id);
+            foreach ($restaurant_types as $restaurant_types_arr) {
+                $restaurant->types()->attach($restaurant_types_arr["type_id"]);
             }
         }
     }
