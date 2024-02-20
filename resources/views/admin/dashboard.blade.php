@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('La tua dashboard') }}</div>
+                    <div class="card-header">{{ __('Info sul tuo ristorante') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,21 +14,16 @@
                             </div>
                         @endif
 
-                        <h4> Bentornato {{ Auth::user()->name }}</h4>
-
-                        <p class="mt-4">Qui hai il controllo totale sui piatti offerti nel tuo ristorante <b
-                                class="restaurant_name">{{ $restaurant->restaurant_name }}</b> . Modifica, aggiungi o elimina
-                            piatti con facilità per garantire un'esperienza culinaria impeccabile ai tuoi clienti.</p>
-                        <p>Sii creativo e aggiungi nuove delizie gastronomiche per stupire i tuoi clienti e far crescere il
-                            tuo business. Ricorda, la tua passione per la cucina si riflette nei piatti che offri!</p>
-
-                        <a class="btn btn-success" style="background-color: #fd8d14"
-                            href="{{ route('admin.restaurant') }}">
-                            dettagli ristorante
-                        </a>
-
-
-
+                        <h4> Bentornato {{ Auth::user()->name }}! ecco il tuo ristorante:</h4>
+                        <h1 class="text-center" style="color: #173736">{{ $restaurant->restaurant_name }}</h1>
+                        <img src="{{ $restaurant->restaurant_image }}" class="card-img-top mt-3 w-70" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{ $restaurant->restaurant_email }}</p>
+                            <div>{{ $restaurant->restaurant_address }}</div>
+                            @foreach ($restaurant->types as $type)
+                                <span class="badge text-bg-success"> {{ $type->name }} </span>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
