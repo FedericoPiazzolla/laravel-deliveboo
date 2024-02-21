@@ -61,7 +61,7 @@ return [
   ],
   [
     'restaurant_id' => 1,
-    'name' => "Sedanop rapa glassato",
+    'name' => "Sedano rapa glassato",
     'description' => 'Sedano rapa glassato e cotto a bassa temperatura con insalatina orientale',
     'price' => 14.70 ,
     'available' => true,
