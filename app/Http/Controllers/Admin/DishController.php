@@ -108,11 +108,13 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+
+        return redirect()->route('dishes.index')->with('message', "$dish->name è stato cancellato");
     }
 }
