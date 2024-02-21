@@ -494,7 +494,7 @@ return [
       'image' => 'https://www.fattoincasadabenedetta.it/wp-content/uploads/2022/03/AdobeStock_325292847-1200x900.jpg'
   ],
 
-  // id7   //*******  GIULIO *********/
+  // id7  
   [
     'restaurant_id' => 7,
     'name' => "Chicken Tikka Masala",
@@ -657,8 +657,6 @@ return [
       'available' => true,
       'image' => 'https://www.ricettedalmondo.it/images/foto-ricette/f/30121-focaccine-alla-nutella-in-padella.jpg'
   ],
-
-  // /************// GIULIO *******/
 
   // id9 //*******  FEDE *********/
   [
