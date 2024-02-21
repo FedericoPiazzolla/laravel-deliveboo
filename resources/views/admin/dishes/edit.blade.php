@@ -7,13 +7,13 @@
   <a class="my-5 btn btn-success" href="{{ route('admin.dishes.index') }}">&LeftArrow; Indietro</a>
   <h2 class="flex-grow-1">Pagina di Modifica</h2>
 
-  <form action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" method="POST" enctype="multipart/form-data">
+  <form name="myForm" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
     @csrf
     @method('PUT')
 
     <div class="mb-3 has-validation">
       <label for="name" class="form-label">Nome</label>
-      <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}">
+      <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}" required>
 
       @error('title')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -22,7 +22,7 @@
 
     <div class="mb-3 has-validation">
       <label for="price" class="form-label">Prezzo</label>
-      <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price">
+      <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" required>
 
       @error('price')
         <div class="invalid-feedback">{{ $message }}</div>

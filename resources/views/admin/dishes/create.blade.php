@@ -17,12 +17,12 @@
         </div>
     @endif
 
-    <form class="mt-5" action="{{ route('admin.dishes.store') }}" method="POST">
+    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST">
         @csrf
 
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
         </div>
 
         <div class="mb-3">
@@ -32,7 +32,7 @@
 
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
-            <input name="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}">
+            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" required>
         </div>
 
         <select class="form-select" aria-label="Default select example">

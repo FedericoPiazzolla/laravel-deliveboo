@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrazione') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form name="myForm" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" onsubmit="return validateForm()">
                         @csrf
 
                         {{-- DATI RISTORATORE --}}
