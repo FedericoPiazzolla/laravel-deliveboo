@@ -658,14 +658,15 @@ return [
       'image' => 'https://www.ricettedalmondo.it/images/foto-ricette/f/30121-focaccine-alla-nutella-in-padella.jpg'
   ],
 
-  // id9 //*******  FEDE *********/
+  // id9 
+
   [
     'restaurant_id' => 9,
     'name' => "Filetto di Salmone alla Griglia",
     'description' => "Filetto di salmone fresco grigliato, servito con contorno di verdure di stagione.",
     'price' => 18.99,
     'available' => true,
-    'image' => ''
+    'image' => 'https://media.grandchef.net/ricette/salmone-alla-griglia/galleria/salmone-alla-griglia.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -673,7 +674,7 @@ return [
       'description' => "Spaghetti cucinati con una varietà di frutti di mare freschi, aglio, prezzemolo e peperoncino.",
       'price' => 20.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://media-assets.lacucinaitaliana.it/photos/644166516795be2c6414ea96/16:9/w_2560%2Cc_limit/GettyImages-1006587840.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -681,7 +682,7 @@ return [
       'description' => "Zuppa ricca di frutti di mare assortiti, pomodoro, aglio, prezzemolo e crostini di pane.",
       'price' => 22.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.giallozafferano.it/images/225-22595/Zuppa-di-pesce_650x433_wm.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -689,7 +690,7 @@ return [
       'description' => "Selezione di pesce fresco grigliato, tra cui gamberi, calamari, seppie e pesce spada, servita con insalata mista.",
       'price' => 25.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2023/06/grigliata-di-pesce-1.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -697,7 +698,7 @@ return [
       'description' => "Risotto cremoso preparato con una varietà di frutti di mare freschi, vino bianco e prezzemolo.",
       'price' => 24.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2012/05/ricetta-risotto-frutti-mare/jcr:content/imagePreview.img10.jpg/1542906302616.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -705,7 +706,7 @@ return [
       'description' => "Insalata fresca con polpo cotto al vapore, patate, pomodorini, cipolla rossa, olive e condita con olio d'oliva e limone.",
       'price' => 16.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/1e1d235f-ea38-442a-a1dc-87f141e0dacd/Derivates/85e9b876-9a3b-405c-a148-50dc1156f6fc.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -713,7 +714,7 @@ return [
       'description' => "Calamari freschi tagliati a strisce, impanati e fritti fino a doratura, serviti con salsa di pomodoro.",
       'price' => 14.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.giallozafferano.it/images/153-15363/Frittura-di-calamari_780x520_wm.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -721,7 +722,7 @@ return [
       'description' => "Ravioli ripieni di pesce fresco, serviti con salsa di burro e salvia.",
       'price' => 18.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/2632637F-52D4-4BD9-8D8F-645DDAD832FB/Derivates/C9F9760E-FE29-4B59-8E6B-2CF9E5294C7D.jpg'
   ],
   [
       'restaurant_id' => 9,
@@ -729,7 +730,7 @@ return [
       'description' => "Fette di pane tostato con tonno fresco, pomodorini, capperi, aglio e olio d'oliva.",
       'price' => 13.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://primochef.it/wp-content/uploads/2019/03/SH_Bruschette_con_tonno-1200x800.jpg.webp'
   ],
   [
       'restaurant_id' => 9,
@@ -737,7 +738,7 @@ return [
       'description' => "Granchio reale cotto al vapore, servito con burro fuso e limone.",
       'price' => 29.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://us.123rf.com/450wm/bbtreesubmission/bbtreesubmission1903/bbtreesubmission190303262/119986739-granchio-reale-cotto-a-vapore-sul-piatto.jpg?ver=6'
   ],
 
   // id10
@@ -747,7 +748,7 @@ return [
     'description' => "Hamburger classico con carne di manzo, lattuga, pomodoro, cipolla e maionese, servito con patatine fritte.",
     'price' => 6.99,
     'available' => true,
-    'image' => ''
+    'image' => 'https://images-tastehub.mdlzapps.cloud/images/017bedd0-06c9-4461-9eb1-8eb59b50e493.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -755,7 +756,7 @@ return [
       'description' => "Hamburger con carne di manzo, formaggio cheddar, lattuga, pomodoro, cipolla e maionese, servito con patatine fritte.",
       'price' => 7.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.tavolartegusto.it/wp/wp-content/uploads/2023/09/cheeseburger.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -763,7 +764,7 @@ return [
       'description' => "Bocconcini di pollo croccanti e dorati, serviti con salsa agrodolce.",
       'price' => 5.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2023/09/nuggets-di-pollo-still-life-finale-3-1200x675.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -771,7 +772,7 @@ return [
       'description' => "Panino morbido con wurstel di pollo, senape, ketchup, cipolla e crauti, servito con patatine fritte.",
       'price' => 5.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://media-assets.lacucinaitaliana.it/photos/61fac451182aba61c8a4f6e2/3:2/w_1500,h_1000,c_limit/hot-dog-gustosi-ricetta-tradizionale-consigli-varianti-ingredienti-pane-wurstel-la-cucina-italiana.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -779,7 +780,7 @@ return [
       'description' => "Patatine fritte croccanti e calde, leggermente salate.",
       'price' => 2.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2015/11/1477_patatine.jpg?resize=895%2C616&ssl=1'
   ],
   [
       'restaurant_id' => 10,
@@ -787,7 +788,7 @@ return [
       'description' => "Anelli di cipolla impanati e fritti fino a doratura, serviti con salsa barbecue.",
       'price' => 4.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.simplyrecipes.com/thmb/cMe-79ggQu91WIWwmbpPnyAmPVs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Air-Fryer-Onion-Rings-LEAD-4-db00f8b94db848f9b502f7d24f06935f.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -795,7 +796,7 @@ return [
       'description' => "Insalata fresca con petto di pollo alla griglia, pomodori, cetrioli, mais e salsa ranch.",
       'price' => 8.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2019/06/insalata-di-pollo/_jcr_content/header-par/image-single.img.jpg/1560261890876.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -803,7 +804,7 @@ return [
       'description' => "Panino con filetto di pesce impanato, lattuga, salsa tartara, servito con patatine fritte.",
       'price' => 7.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.fattoincasadabenedetta.it/wp-content/uploads/2021/07/sito-.-40-Fish-burger-con-chips.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -811,7 +812,7 @@ return [
       'description' => "Bevanda cremosa a base di gelato alla fragola e latte, guarnita con panna montata.",
       'price' => 4.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.lucake.it/wp-content/uploads/2022/09/milkshake-alla-fragola.jpg'
   ],
   [
       'restaurant_id' => 10,
@@ -819,12 +820,10 @@ return [
       'description' => "Brownie al cioccolato denso e ricco, servito caldo con gelato alla vaniglia e salsa al cioccolato.",
       'price' => 5.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.sempliceveloce.it/wordpress/wp-content/uploads/2019/02/brownies_americani_originali.jpg'
   ],
 
-    // /************// FEDE *******/
-
-  // id11 //*******  MADDY *********/
+  // id11
   [
     'restaurant_id' => 11,
     'name' => "Gamberi all'Aglio",
@@ -913,7 +912,7 @@ return [
     'description' => "Uova strapazzate, bacon croccante, salsiccia, patate hash brown e pancake, serviti con sciroppo d'acero.",
     'price' => 9.99,
     'available' => true,
-    'image' => ''
+    'image' => 'https://wips.plug.it/cips/paginegialle.it/magazine/cms/2021/03/shutterstock_1466097782.jpg?w=744&h=418&a=c'
   ],
   [
       'restaurant_id' => 12,
@@ -921,7 +920,7 @@ return [
       'description' => "Uova strapazzate su muffin tostati con prosciutto cotto e salsa olandese, servite con patate al forno.",
       'price' => 11.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2015/05/uova-alla-benedict/uova-alla-benedict-ante.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -929,7 +928,7 @@ return [
       'description' => "Pancake soffici serviti con fragole, mirtilli e banane, guarniti con zucchero a velo e sciroppo d'acero.",
       'price' => 8.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://angelasimonelli.it/wp-content/uploads/2017/09/pancakes-05.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -937,7 +936,7 @@ return [
       'description' => "Fette di pane tostato imbevute in una miscela di uova e latte, grigliate fino a doratura e servite con sciroppo d'acero e frutta fresca.",
       'price' => 7.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2021/11/french-toast/_jcr_content/header-par/image-single.img.jpg/1636546191335.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -945,7 +944,7 @@ return [
       'description' => "Bagel tostato farcito con crema di formaggio, fette di salmone affumicato, cipolla rossa e capperi.",
       'price' => 10.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://media.soscuisine.com/images/recettes/large/1371.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -953,7 +952,7 @@ return [
       'description' => "Yogurt greco servito con muesli croccante, miele e frutta fresca.",
       'price' => 6.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.lacucinasalutare.it/wp-content/uploads/2019/03/jogurt-owoce-585x585.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -961,7 +960,7 @@ return [
       'description' => "Omelette leggera e soffice preparata con tofu, verdure miste e formaggio vegano, servita con insalata.",
       'price' => 9.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://primochef.it/wp-content/uploads/2019/03/SH_omelette_vegana.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -969,7 +968,7 @@ return [
       'description' => "Fette di pane tostato con avocado schiacciato, pomodorini tagliati a metà e semi di sesamo, conditi con olio d'oliva e pepe nero.",
       'price' => 8.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2018/12/avocado-toast-al-salmone/_jcr_content/header-par/image-single.img.jpg/1588585608553.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -977,7 +976,7 @@ return [
       'description' => "Frutta fresca frullata con yogurt greco e muesli, guarnita con cocco grattugiato, semi di chia e frutta secca.",
       'price' => 9.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/04/bowl-alle-fragole-e-lamponi/_jcr_content/header-par/image-single.img.jpg/1493807394060.jpg'
   ],
   [
       'restaurant_id' => 12,
@@ -985,6 +984,6 @@ return [
       'description' => "Espresso caldo mescolato con latte vellutato e una leggera schiuma di latte.",
       'price' => 3.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://dairyfarmersofcanada.ca/sites/default/files/image_file_browser/conso_recipe/2021/Cafe%20Latte.jpg'
   ]
 ];
