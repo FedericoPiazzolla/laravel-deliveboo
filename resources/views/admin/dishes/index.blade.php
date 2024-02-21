@@ -4,7 +4,7 @@
 <h2>Lista dei piatti</h2>
 
 <div class="text-end">
-    <a class="btn"  href="{{ route('admin.dishes.create') }}">Crea un nuovo piatto</a>
+    <a class="btn btn-success border-0 text-warning" style="background-color: #173736 "  href="{{ route('admin.dishes.create') }}">Crea un nuovo piatto</a>
 </div>
 
 @if (count($dishes) > 0)
