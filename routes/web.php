@@ -29,6 +29,7 @@ Route::middleware(['auth', 'verified'])
     ->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
+    Route::delete('dishes/{dish}', 'DishController@destroy')->name('destroy');
     
     Route::get('trash', [TrashController::class, 'trash'])->name('trash');
     Route::get('restore/{id}', [TrashController::class, 'restore'])->name('restore');

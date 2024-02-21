@@ -7,7 +7,7 @@
           <tr>
               <th scope="col">Id</th>
               <th scope="col">Name</th>
-              <th scope="col">Restore</th>
+              <th class="text-center" scope="col">Restore</th>
           </tr>
       </thead>
       <tbody>
@@ -16,11 +16,23 @@
               <tr>
                   <th scope="row">{{ $dish->id }}</th>
                   <td>{{$dish->name}}</td>
-                  <td>
+                  <td class="text-center">
 
-                    <form action="{{route('admin.restore', ['id' => $dish->id]) }}">
+                    <form class="d-inline-block" action="{{route('admin.restore', ['id' => $dish->id]) }}" method="PUT">
+                      @csrf
+                      @method("DELETE")
+
                       <button class="btn btn-warning" type="submit">
                         <i class="fa-solid fa-trash-arrow-up"></i>
+                      </button>
+                    </form>
+
+                    <form class="d-inline-block" action="{{route('admin.destroy', ['dish' => $dish->slug]) }}" method="PUT">
+                      @csrf
+                      @method("DELETE")
+
+                      <button class="btn btn-danger" type="submit">
+                        <i class="fa-solid fa-trash"></i>
                       </button>
                     </form>
 
