@@ -494,7 +494,7 @@ return [
       'image' => 'https://www.fattoincasadabenedetta.it/wp-content/uploads/2022/03/AdobeStock_325292847-1200x900.jpg'
   ],
 
-  // id7   //*******  GIULIO *********/
+  // id7  
   [
     'restaurant_id' => 7,
     'name' => "Chicken Tikka Masala",
@@ -512,12 +512,12 @@ return [
       'image' => 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/saag-paneer-4893170.jpg?resize=768,574'
   ],
   [
-      'restaurant_id' => 7,
-      'name' => "Butter Chicken",
-      'description' => "Pezzetti di pollo cotti in una salsa cremosa di pomodoro, burro, panna, mandorle, e spezie aromatiche.",
-      'price' => 15.99,
-      'available' => true,
-      'image' => ''
+    'restaurant_id' => 7,
+    'name' => "Butter Chicken",
+    'description' => "Pezzetti di pollo cotti in una salsa cremosa di pomodoro, burro, panna, mandorle, e spezie aromatiche.",
+    'price' => 15.99,
+    'available' => true,
+    'image' => 'https://www.177milkstreet.com/assets/site/Recipes/_large/Butter-Chicken.jpg'
   ],
   [
       'restaurant_id' => 7,
@@ -525,7 +525,7 @@ return [
       'description' => "Un piatto di riso speziato cotto con verdure miste, erbe aromatiche, spezie e servito con raita.",
       'price' => 13.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://images.immediate.co.uk/production/volatile/sites/30/2020/10/Vegetable-Biryani-With-Green-Raita-159c15d.jpg?quality=90&resize=556,505'
   ],
   [
       'restaurant_id' => 7,
@@ -533,7 +533,7 @@ return [
       'description' => "Ceci cotti con cipolle, pomodori, zenzero, aglio e una miscela di spezie aromatiche.",
       'price' => 11.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2020/02/Chana-masala-0D6A9427.jpg'
   ],
   [
       'restaurant_id' => 7,
@@ -541,7 +541,7 @@ return [
       'description' => "Pane piatto lievitato cotto in un forno tandoor, servito caldo con burro chiarificato.",
       'price' => 3.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.tasteandtellblog.com/wp-content/uploads/2021/06/Naan-Bread-1.jpg'
   ],
   [
       'restaurant_id' => 7,
@@ -549,7 +549,7 @@ return [
       'description' => "Spinaci freschi cotti con formaggio paneer, cipolle, pomodori, spezie e crema.",
       'price' => 12.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/1911ED40-7BDC-46C2-809B-937F1993DFA4/Derivates/C0F6BA93-C7F1-45AF-BD9E-5E6DAC9A6741.jpg'
   ],
   [
       'restaurant_id' => 7,
@@ -557,7 +557,7 @@ return [
       'description' => "Patate e cavolfiori cotti con cipolle, pomodori, zenzero, aglio e una miscela di spezie.",
       'price' => 10.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://veganhuggs.com/wp-content/uploads/2021/04/aloo-gobi-in-bowl-side-view.jpg'
   ],
   [
       'restaurant_id' => 7,
@@ -565,7 +565,7 @@ return [
       'description' => "Spezzatino di agnello cotto in una salsa cremosa di pomodoro, yogurt, mandorle e spezie aromatiche.",
       'price' => 17.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://static.toiimg.com/thumb/53192600.cms?imgsize=418831&width=800&height=800'
   ],
   [
       'restaurant_id' => 7,
@@ -573,7 +573,7 @@ return [
       'description' => "Verdure miste o pezzi di pollo immersi in pastella di ceci e fritti fino a ottenere una croccantezza dorata.",
       'price' => 8.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2021/09/Pakora-1200x675.jpg'
   ],
 
   // id8
@@ -583,7 +583,7 @@ return [
     'description' => "Cono croccante riempito con il gelato a tua scelta.",
     'price' => 3.99,
     'available' => true,
-    'image' => ''
+    'image' => 'https://www.tuppo.it/cdn/shop/products/cono-2.jpg?v=1590515249'
   ],
   [
       'restaurant_id' => 8,
@@ -591,7 +591,7 @@ return [
       'description' => "Coppetta riempita con il gelato a tua scelta.",
       'price' => 4.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.bio-pack.it/files/_public/img/prodotti/CGE10_f1.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -599,15 +599,15 @@ return [
       'description' => "Granita fresca e rinfrescante disponibile in vari gusti come limone, caffè, fragola, ecc.",
       'price' => 3.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2022/06/granita-fragole/granita-fragole-finale.jpg'
   ],
   [
       'restaurant_id' => 8,
       'name' => "Torta Gelato",
       'description' => "Torta gelato fatta in casa con strati di gelato e biscotti o crosta di torta.",
-      'price' => 5.99,
+      'price' => 25.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2022/06/torta-gelato-finale-4.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -615,7 +615,7 @@ return [
       'description' => "Una pallina di gelato affogata in una tazza di caffè espresso.",
       'price' => 4.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/AB7880E4-C400-4CCD-BAF6-FDF1852FBA43/Derivates/336DADD4-2ECF-443E-8B11-2D589AB62970.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -623,7 +623,7 @@ return [
       'description' => "Frullato di gelato con latte e scelta di gusti, guarnito con panna montata.",
       'price' => 5.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.almar.it/pub/media/magearray/news/image/come_fare_un_perfetto_frapp_gelato.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -631,7 +631,7 @@ return [
       'description' => "Bevanda cremosa a base di gelato e latte, disponibile in vari gusti come cioccolato, fragola, vaniglia, ecc.",
       'price' => 4.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://img.freepik.com/premium-photo/appetizing-photo-pistachio-milkshake_85333-1041.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -639,7 +639,7 @@ return [
       'description' => "Dolce gelato simile a un gelato ma leggermente più morbido, servito in coppetta.",
       'price' => 5.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://dolciveloci.it/wp-content/uploads/2019/07/SH_semifreddo_alla_nocciola.jpg'
   ],
   [
       'restaurant_id' => 8,
@@ -647,18 +647,16 @@ return [
       'description' => "Caffè freddo servito con una pallina di gelato a tua scelta.",
       'price' => 5.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.rivareno.com/wp-content/uploads/2021/07/Caffe-freddo.jpg'
   ],
   [
       'restaurant_id' => 8,
-      'name' => "Pizzetta Dolce",
-      'description' => "Una mini pizza dolce con base di pasta frolla e topping di gelato e frutta fresca.",
+      'name' => "Focaccina Dolce",
+      'description' => "Una mini focaccia dolce con base di pasta frolla e topping di gelato e frutta fresca.",
       'price' => 6.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.ricettedalmondo.it/images/foto-ricette/f/30121-focaccine-alla-nutella-in-padella.jpg'
   ],
-
-  // /************// GIULIO *******/
 
   // id9 //*******  FEDE *********/
   [
@@ -833,7 +831,7 @@ return [
     'description' => "Gamberi freschi saltati in padella con aglio, peperoncino, e cipolla verde.",
     'price' => 12.99,
     'available' => true,
-    'image' => ''
+    'image' => 'https://blog.giallozafferano.it/adryincucina/wp-content/uploads/2022/04/gamberoni-allaglio-1-scaled-e1649767596163.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -841,7 +839,7 @@ return [
       'description' => "Petti di pollo croccanti in salsa agrodolce, serviti con mandorle tostate e verdure.",
       'price' => 11.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.tribugolosa.com/media/img_08201-e1424960321639-jpg_crop.jpeg/rh/pollo-alle-mandorle.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -849,7 +847,7 @@ return [
       'description' => "Anatra arrosto marinata in salsa di soia e miele, servita con pancake cinesi, cipolla verde e salsa hoisin.",
       'price' => 22.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://blog.giallozafferano.it/spuntidibonta/wp-content/uploads/2022/04/Anatra-alla-Pechinese-960x675.png'
   ],
   [
       'restaurant_id' => 11,
@@ -857,7 +855,7 @@ return [
       'description' => "Fettine di maiale fritte in pastella croccante, con peperoni, cipolle e ananas in salsa agrodolce.",
       'price' => 14.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://wips.plug.it/cips/buonissimo.org/cms/2012/06/maiale-in-agrodolce.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -865,7 +863,7 @@ return [
       'description' => "Ravioli cinesi ripieni di carne di maiale e verdure, cotti al vapore e serviti con salsa di soia.",
       'price' => 11.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://cinaintavola.com/wp-content/uploads/2020/11/dscf4308-800x530.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -873,7 +871,7 @@ return [
       'description' => "Zuppa di brodo di pollo con wonton ripieni di carne di maiale e gamberetti, verdure e cipolla verde.",
       'price' => 9.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.gustissimo.it/articoli/ricette/minestre-creme-zuppe/zuppa-wonton.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -881,7 +879,7 @@ return [
       'description' => "Tagliatelle di riso saltate in padella con gamberi, uova, cipolla, germogli di soia, arachidi e lime.",
       'price' => 13.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Phat_Thai_kung_Chang_Khien_street_stall.jpg/1200px-Phat_Thai_kung_Chang_Khien_street_stall.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -889,7 +887,7 @@ return [
       'description' => "Involtini di verdure e carne arrotolati in pasta di riso, fritti fino a doratura, serviti con salsa agrodolce.",
       'price' => 8.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.buttalapasta.it/wp-content/uploads/2021/02/involtini-primavera-cinesi.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -897,7 +895,7 @@ return [
       'description' => "Gelato cremoso al tè verde, perfetto per concludere il pasto con un tocco dolce.",
       'price' => 6.99,
       'available' => true,
-      'image' => ''
+      'image' => 'https://www.antica-drogheria.it/wp-content/uploads/2020/12/Antica-Drogheria-preparare-in-casa-gelato-al-te-verde-01.jpg'
   ],
   [
       'restaurant_id' => 11,
@@ -905,7 +903,7 @@ return [
       'description' => "Tè al gelsomino caldo e rinfrescante, perfetto per accompagnare i piatti cinesi.",
       'price' => 2.49,
       'available' => true,
-      'image' => ''
+      'image' => 'https://food.htgetrid.com/wp-content/uploads/2019/08/polza-i-vred-zhasminovogo-chaja.jpg'
   ],
 
   // id12
