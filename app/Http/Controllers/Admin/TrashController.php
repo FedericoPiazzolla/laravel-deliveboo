@@ -10,7 +10,7 @@ class TrashController extends Controller
 {
     public function trash()
     {
-        $dishes = Dish::onlytrashed()->get();
+        $dishes = Dish::onlyTrashed()->get();
         return view('admin.trash', compact($dishes));
     }
 

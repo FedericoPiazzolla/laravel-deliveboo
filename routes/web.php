@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\Admin\TrashController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,8 @@ Route::middleware(['auth', 'verified'])
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
     
-
+    Route::get('trash', [TrashController::class, 'trash'])->name('trash');
+    Route::get('restore/{id}', [TrashController::class, 'restore'])->name('restore');
 });
 
 

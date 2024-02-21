@@ -70,6 +70,12 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> I Miei Piatti
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.trash' ? 'link_selected' : '' }}"
+                                    href="{{ route('admin.trash') }}">
+                                    <i class="fa-solid fa-trash-arrow-up"></i> Piatti Eliminati
+                                </a>
+                            </li>
                         </ul>
 
 

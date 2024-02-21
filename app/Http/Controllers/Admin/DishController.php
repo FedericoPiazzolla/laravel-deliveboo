@@ -115,6 +115,6 @@ class DishController extends Controller
     {
         $dish->delete();
 
-        return redirect()->route('dishes.index')->with('message', "$dish->name è stato cancellato");
+        return redirect()->route('admin.dishes')->with('message', "$dish->name è stato cancellato");
     }
 }
