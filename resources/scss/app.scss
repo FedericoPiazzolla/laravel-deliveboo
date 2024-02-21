@@ -22,6 +22,10 @@ nav {
 // Homepage
 body {
     background-color: $main_bg;
+
+    img {
+        max-width: 100%;
+    }
 }
 
 // Login Page
