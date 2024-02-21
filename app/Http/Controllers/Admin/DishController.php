@@ -83,7 +83,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        if($dish->restaurant_id->user_id !== Auth::user()->id) {
+        if($dish->restaurant->user_id !== Auth::user()->id) {
             abort(404);
         }
         return view('admin.dishes.edit', compact('dish'));
@@ -108,11 +108,13 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name è stato cancellato");
     }
 }
