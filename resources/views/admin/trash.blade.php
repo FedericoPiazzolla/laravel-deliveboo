@@ -18,7 +18,7 @@
                   <td>{{$dish->name}}</td>
                   <td>
 
-                    <form action="{{route('restore', ['id' => $dish->id]) }}">
+                    <form action="{{route('admin.restore', ['id' => $dish->id]) }}">
                       <button class="btn btn-warning" type="submit">
                         <i class="fa-solid fa-trash-arrow-up"></i>
                       </button>

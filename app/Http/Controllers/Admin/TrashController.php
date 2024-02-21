@@ -11,7 +11,7 @@ class TrashController extends Controller
     public function trash()
     {
         $dishes = Dish::onlyTrashed()->get();
-        return view('admin.trash', compact($dishes));
+        return view('admin.trash', compact('dishes'));
     }
 
     public function restore($id)
