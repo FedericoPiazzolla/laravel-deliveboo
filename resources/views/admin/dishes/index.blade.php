@@ -20,7 +20,7 @@
 
     <tbody>
         @foreach ($dishes as $dish)
-        <tr>
+        <tr class="{{ $dish->available == 0 ? 'table-danger' : '' }}">
             <th scope="row">{{ $dish->id }}</th>
             <td>{{ $dish->name }}</td>
             <td>{{ $dish->price }}</td>
