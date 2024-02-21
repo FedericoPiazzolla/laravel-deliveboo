@@ -14,7 +14,7 @@
             <th scope="col">id</th>
             <th scope="col">nome</th>
             <th scope="col">prezzo</th>
-            <th scope="col">Actions</th>
+            <th class="text-center" scope="col">Actions</th>
         </tr>
     </thead>
 
@@ -24,13 +24,24 @@
             <th scope="row">{{ $dish->id }}</th>
             <td>{{ $dish->name }}</td>
             <td>{{ $dish->price }}</td>
-            <td>
+            <td class="text-center">
               <a class="btn btn-primary"
-                    href="{{ route('admin.dishes.show', ['dish' => $dish->slug]) }}">dettagli
+                    href="{{ route('admin.dishes.show', ['dish' => $dish->slug]) }}">
+                    <i class="fa-solid fa-eye"></i>
                 </a> 
                 <a class="btn btn-success" style="background-color: #fd8d14" href="{{ route('admin.dishes.edit', ['dish' => $dish->slug]) }}">
                     <i class="fa-solid fa-pen"></i>
                 </a>
+
+                <form class="d-inline-block" action="{{ route('admin.dishes.destroy', ['dish' => $dish->slug]) }}" method="POST">
+                    @csrf
+                    @method("DELETE")
+
+                    <button class="btn btn-danger" type="submit">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                </form>
             </td>
         </tr>
     @endforeach
