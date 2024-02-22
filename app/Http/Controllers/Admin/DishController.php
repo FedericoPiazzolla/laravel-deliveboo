@@ -51,17 +51,18 @@ class DishController extends Controller
     {
         $restaurant = Restaurant::where('user_id', Auth::id())->first();
         $form_data = $request->validated();
+
         $dish = new Dish();
+        $dish->fill($form_data);
 
         //Salvataggio dell'immagine
-        if($request->hasFile('image')) {
-            $path = Storage::put('uploads', $request->image);
-            $dish->image = $path;
-        } 
+        if ($request->hasFile('image')) {
+            $image_path = Storage::put('dish_image', $request->image);
+            $dish->image = $image_path;
+        }
 
-        $dish->fill($form_data);
         $dish->restaurant_id = $restaurant->id;
-        $dish->available = true;    
+        $dish->available = true;  
         $dish->save();
 
         return redirect()->route('admin.dishes.show', ['dish' => $dish->slug]);

@@ -7,9 +7,10 @@
                 <div class="card p-4">
                     <h2>{{ $dish->name }}</h2>
 
-                    <div>
-                        <img src="{{ $dish->image }}" alt="{{ $dish->name }}">
+                    <div class="mb-3">    
+                        <img src="{{ Str::startsWith($dish->image, 'http') ? $dish->image : asset("storage/".$dish->image)}}" alt="{{ $dish->name }}">
                     </div>
+
                     <div>
                         <p class="mt-4">
                            <span class="fw-bolder">Descrizione:</span>
