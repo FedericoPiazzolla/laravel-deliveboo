@@ -1,51 +1,51 @@
 <?php
 return [
     [
-        "restaurant_id" => 1,
+        "dish_id" => [3, 6],
         "order_id" => [3, 5],
     ],
     [
-        "restaurant_id" => 2,
+        "dish_id" => [13, 19],
         "order_id" => [1, 6],
     ],
     [
-        "restaurant_id" => 3,
+        "dish_id" => [23, 28],
         "order_id" => [7, 10],
     ],
     [
-        "restaurant_id" => 4,
+        "dish_id" => [35, 39],
         "order_id" => [2, 11],
     ],
     [
-        "restaurant_id" => 5,
+        "dish_id" => [47, 49],
         "order_id" => [13, 17],
     ],
     [
-        "restaurant_id" => 6,
+        "dish_id" => [52, 56],
         "order_id" => [19, 24],
     ],
     [
-        "restaurant_id" => 7,
+        "dish_id" => [63, 68],
         "order_id" => [12, 8],
     ],
     [
-        "restaurant_id" => 8,
+        "dish_id" => [73, 78],
         "order_id" => [9, 4],
     ],
     [
-        "restaurant_id" => 9,
+        "dish_id" => [85, 89],
         "order_id" => [14, 21],
     ],
     [
-        "restaurant_id" => 10,
+        "dish_id" => [95, 97],
         "order_id" => [20, 23],
     ],
     [
-        "restaurant_id" => 11,
+        "dish_id" => [101, 108],
         "order_id" => [15, 22],
     ],
     [
-        "restaurant_id" => 12,
+        "dish_id" => [111, 116],
         "order_id" => [16, 18],
     ],
 ];
