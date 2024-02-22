@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Admin\TrashController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'verified'])
     
     Route::get('trash', [TrashController::class, 'trash'])->name('trash');
     Route::get('restore/{id}', [TrashController::class, 'restore'])->name('restore');
+    Route::get('order',[OrderController::class, 'index'])->name('order');
 });
 
 

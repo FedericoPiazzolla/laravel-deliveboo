@@ -76,6 +76,12 @@
                                     <i class="fa-solid fa-trash-arrow-up fa-lg fa-fw"></i> Piatti Eliminati
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.order' ? 'link_selected' : '' }}"
+                                    href="{{ route('admin.order') }}">
+                                    <i class="fa-solid fa-list"></i> ordini
+                                </a>
+                            </li>
                         </ul>
 
 
