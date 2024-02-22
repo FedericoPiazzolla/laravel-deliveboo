@@ -16,6 +16,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -46,10 +47,13 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'vat_number' => ['required', 'string', 'max:13', 'unique:'.User::class],
+            
 
             // restaurant validations
-            'restaurant_image' => ['nullable', 'image', 'max:512'],
-            'restaurant_logo' => ['nullable', 'image', 'max:512']
+            'restaurant_image' => ['image', 'max:512'],
+            'restaurant_logo' => ['image', 'max:512'],
+            'restaurant_email' => ['required', 'string', 'email', 'max:255', 'unique:'.Restaurant::class],
+            // ^
         ]);
 
         // Creazione dell'istanza della classe User con riempimento dei dati dalla richiesta
@@ -66,7 +70,6 @@ class RegisteredUserController extends Controller
 
         $form_data = $request->all();
 
-        
         $new_restaurant = new Restaurant();
 
         // Controllo del caricamento del file restaurant_image nel form di creazione
@@ -83,7 +86,14 @@ class RegisteredUserController extends Controller
             $new_restaurant->restaurant_logo = $path;
         }
 
+        /////////////
+
+        // Creo la concatenazione dei dati arrivati dal form per comporre l'indirizzo
+        $restaurant_address = $form_data["address"].", ".$form_data["number"].", ".$form_data["cap"].", ".$form_data["city"];
+
         $new_restaurant->fill($form_data);
+        
+        $new_restaurant->restaurant_address = $restaurant_address;
         $new_restaurant->slug = Str::slug($new_restaurant->restaurant_name);
         $new_restaurant->user_id = $user->id;
         
