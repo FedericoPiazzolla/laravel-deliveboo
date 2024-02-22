@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             
             // Seeder delle tabelle pivot
             RestaurantTypeSeeder::class,
+            DishOrderSeeder::class,
         ]);
     }
 }
