@@ -22,7 +22,7 @@
 
     <div class="mb-3 has-validation">
       <label for="price" class="form-label">Prezzo</label>
-      <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
+      <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" onblur="this.value = parseFloat(this.value).toFixed(2)" step=0.01 min=0 max=99.99 required>
 
       @error('price')
         <div class="invalid-feedback">{{ $message }}</div>
