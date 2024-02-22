@@ -7,6 +7,12 @@
     <a class="btn btn-success border-0 text-warning" style="background-color: #173736 "  href="{{ route('admin.dishes.create') }}">Crea un nuovo piatto</a>
 </div>
 
+@if (session('message'))
+    <div class="alert alert-danger">
+    {{ session('message') }}
+    </div>
+@endif
+
 @if (count($dishes) > 0)
 <table class="table table-striped mt-5">
     <thead>
