@@ -9,18 +9,27 @@ use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     public function index()
     {
         $user = User::where('id', Auth::user()->id)->first();
-        $restaurant = Restaurant::where('user_id',$user->id)->first();
-        $dishes = Dish::with('orders')->where('restaurant_id', $restaurant->id)->get();
-        // $orders = Order::with('dish')->where('user_id', $user)->get();
-        //$orders = Order::where( $dish-> );
-        dd($dishes);
-        return view('admin.order', compact('dishes'));
+
+        $orders = DB::table('orders')
+        ->join('dish_order', 'dish_order.order_id', '=', 'orders.id')
+        ->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
+        ->join('restaurants', 'dishes.restaurant_id', '=', 'restaurants.id')
+        ->join('users', 'restaurants.user_id', '=', 'users.id')
+        ->where('users.id', $user->id)
+        ->select('orders.*', 'dishes.*', 'dish_order.*', 'restaurants.*', 'users.*') // Seleziona le colonne che desideri
+        ->get();
+
+        return view('admin.order', compact('orders'));
+
+        // $orders = Order::all();
+     
+        return view('admin.order', compact('orders'));
         
     }
 }

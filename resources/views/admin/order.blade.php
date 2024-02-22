@@ -7,32 +7,28 @@
       <thead>
           <tr>
               <th scope="col">Id</th>
-              <th scope="col">user email</th>
-              <th scope="col">user address</th>
-              <th scope="col">phone number</th>
-              <th scope="col">dish id</th>
-              <th scope="col">dish quantity</th>
+              <th scope="col">email utente</th>
+              <th scope="col">indirizzo utente</th>
+              <th scope="col">telefono</th>
+              <th scope="col">quantità</th>
 
           </tr>
       </thead>
       <tbody>
 
-          @foreach ($dishes as $dish)
+          @foreach ($orders as $order)
+         
               <tr>
-                  <th scope="row">{{ $dish->orders->id }}</th>
+                  <th scope="row">{{ $order->id }}</th>
                   <td>{{$order->interested_user_email}}</td>
                   <td>{{$order->interested_user_address}}</td>
                   <td>{{$order->interested_user_phone}}</td>
+                  <td>{{$order->dish_quantity}}</td>
             
               </tr>
           @endforeach
-{{--           
-              @foreach ($dish_orders as $dish_order)
-                  <tr>
-                    <td>{{$dish_order->dish_id}}</td>
-                    <td>{{$dish_order->dish_quantity}}</td>
-                  </tr>
-              @endforeach --}}
+          
+
 
       </tbody>
   </table>
