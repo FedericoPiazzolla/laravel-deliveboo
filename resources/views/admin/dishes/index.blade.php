@@ -7,6 +7,12 @@
     <a class="btn btn-success border-0 text-warning" style="background-color: #173736 "  href="{{ route('admin.dishes.create') }}">Crea un nuovo piatto</a>
 </div>
 
+@if (session('message'))
+    <div class="alert alert-danger mt-5">
+    {{ session('message') }}
+    </div>
+@endif
+
 @if (count($dishes) > 0)
 <table class="table table-striped mt-5">
     <thead>
@@ -35,7 +41,7 @@
 
                 <form class="d-inline-block" action="{{ route('admin.dishes.destroy', ['dish' => $dish->slug]) }}" method="POST">
                     @csrf
-                    @method("DELETE")
+                    @method('DELETE')
 
                     <button class="btn btn-danger" type="submit">
                         <i class="fa-solid fa-trash"></i>
