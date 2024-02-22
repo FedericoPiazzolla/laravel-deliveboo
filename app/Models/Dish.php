@@ -13,7 +13,7 @@ class Dish extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['name', 'slug', 'description', 'price', 'available'];
+    protected $fillable = ['name', 'slug', 'description', 'price', 'available', 'image'];
 
     public function SetNameAttribute($_name)
     {

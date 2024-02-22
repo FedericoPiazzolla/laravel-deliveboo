@@ -2,13 +2,14 @@
 
 @section('content')
 <div class="container mt-5">
-    <div>
-        <a href="{{ url()->previous() }}">&leftarrow;torna indietro</a>
+    <div class="mb-3">
+        <a class="btn btn-success" href="{{ url()->previous() }}">&leftarrow;torna indietro</a>
     </div>
     <h2 class="text-center">Pagina di creazione di un nuovo piatto</h2>
 
+    {{-- Controllo errori --}}
     @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert alert-danger mt-3">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -16,37 +17,58 @@
             </ul>
         </div>
     @endif
+    {{-- /Controllo errori --}}
 
-    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST">
+    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
         @csrf
 
+        {{-- name --}}
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
         </div>
+        {{-- /name --}}
 
+        {{-- Image --}}
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+            <label for="image" class="form-label">Immagine</label>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                name="image" value="{{ old('image') }}" onchange="showImage(event)">
         </div>
 
+        @error('image')
+            <p class="text-danger">{{ $message }}</p>
+        @enderror
+
+        <div class="mb-4">
+            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
+        </div>
+        
+        {{-- /Image --}}
+
+        {{-- price --}}
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
             <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
         </div>
+        {{-- /price --}}
 
+        {{-- description --}}
         <div class="mb-3">
-            <select class="form-select" aria-label="Default select example">
-                <option @selected(old('available') === 'true')>Disponibile</option>
-                <option @selected(old('available') === 'false') value="1">non disponibile</option>
-
-            </select>
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
         </div>
+        {{-- /description --}}        
         
 
         <button class="btn btn-success" type="submit">Salva</button>
     </form>
 
-    
+    <script>
+        function showImage(event) {
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 
 @endsection
