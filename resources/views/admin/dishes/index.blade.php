@@ -8,7 +8,7 @@
 </div>
 
 @if (session('message'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger mt-5">
     {{ session('message') }}
     </div>
 @endif
@@ -41,7 +41,7 @@
 
                 <form class="d-inline-block" action="{{ route('admin.dishes.destroy', ['dish' => $dish->slug]) }}" method="POST">
                     @csrf
-                    @method("DELETE")
+                    @method('DELETE')
 
                     <button class="btn btn-danger" type="submit">
                         <i class="fa-solid fa-trash"></i>

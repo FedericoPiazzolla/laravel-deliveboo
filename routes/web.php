@@ -31,8 +31,8 @@ Route::middleware(['auth', 'verified'])
     Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
     
     Route::get('trash', [TrashController::class, 'trash'])->name('trash');
-    Route::get('dishes/restore/{id}', [TrashController::class, 'restore'])->name('restore');
-    Route::delete("dishes/def_destroy/{dish}", [TrashController::class, "defDestroy"])->withTrashed()->name('dishes.def_destroy');
+    Route::post('restore/{dish}', [TrashController::class, 'restore'])->withTrashed()->name('dishes.restore');
+    Route::delete("def_destroy/{dish}", [TrashController::class, "defDestroy"])->withTrashed()->name('dishes.def_destroy');
 });
 
 

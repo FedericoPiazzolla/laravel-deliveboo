@@ -29,18 +29,17 @@
               <td>{{$dish->name}}</td>
               <td class="text-center">
 
-                  <form class="d-inline-block" action="{{route('admin.restore', ['id' => $dish->id]) }}" method="PUT">
+                  <form class="d-inline-block" action="{{route('admin.dishes.restore', ['dish' => $dish->slug]) }}" method="POST">
                     @csrf
-                    @method("DELETE")
 
                     <button class="btn btn-warning" type="submit">
                       <i class="fa-solid fa-trash-arrow-up"></i>
                     </button>
                   </form>
 
-                  <form class="d-inline-block" action="{{route('admin.dishes.def_destroy', ['dish' => $dish->slug]) }}" method="PUT">
+                  <form class="d-inline-block" action="{{route('admin.dishes.def_destroy', ['dish' => $dish->slug]) }}" method="POST">
                     @csrf
-                    @method("DELETE")
+                    @method('DELETE')
 
                     <button class="btn btn-danger" type="submit">
                       <i class="fa-solid fa-trash"></i>
