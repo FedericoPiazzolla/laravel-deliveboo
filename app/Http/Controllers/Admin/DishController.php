@@ -11,6 +11,7 @@ use App\Models\Dish;
 use App\Models\Restaurant;
 use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -51,9 +52,16 @@ class DishController extends Controller
         $restaurant = Restaurant::where('user_id', Auth::id())->first();
         $form_data = $request->validated();
         $dish = new Dish();
+
+        //Salvataggio dell'immagine
+        if($request->hasFile('image')) {
+            $path = Storage::put('uploads', $request->image);
+            $dish->image = $path;
+        } 
+
         $dish->fill($form_data);
         $dish->restaurant_id = $restaurant->id;
-        $dish->available = true;
+        $dish->available = true;    
         $dish->save();
 
         return redirect()->route('admin.dishes.show', ['dish' => $dish->slug]);

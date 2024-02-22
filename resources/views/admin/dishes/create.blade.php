@@ -19,7 +19,7 @@
     @endif
     {{-- /Controllo errori --}}
 
-    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST">
+    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- name --}}
@@ -29,12 +29,22 @@
         </div>
         {{-- /name --}}
 
-        {{-- description --}}
+        {{-- Image --}}
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+            <label for="image" class="form-label">Immagine</label>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                name="image" value="{{ old('image') }}" onchange="showImage(event)">
         </div>
-        {{-- /description --}}
+
+        @error('image')
+            <p class="text-danger">{{ $message }}</p>
+        @enderror
+
+        <div class="mb-4">
+            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
+        </div>
+        
+        {{-- /Image --}}
 
         {{-- price --}}
         <div class="input-group mb-3">
@@ -42,11 +52,23 @@
             <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
         </div>
         {{-- /price --}}
+
+        {{-- description --}}
+        <div class="mb-3">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+        </div>
+        {{-- /description --}}        
         
 
         <button class="btn btn-success" type="submit">Salva</button>
     </form>
 
-    
+    <script>
+        function showImage(event) {
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 
 @endsection
