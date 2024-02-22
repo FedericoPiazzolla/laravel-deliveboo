@@ -26,7 +26,8 @@ class StoreDishRequest extends FormRequest
         return [
             'name' => ['required', 'max:200', 'min:5', 'unique:dishes'],
             'description' => ['nullable'],
-            'price' => ['required','decimal:2']
+            'price' => ['required', 'numeric', 'decimal:2', 'min:0.01', 'max:99.99'],
+            'image' => ['required', 'image', 'max:512'],
 
         ];
     }
@@ -37,6 +38,10 @@ class StoreDishRequest extends FormRequest
             'name.required' => 'Il nome è obbligatorio',
             'name.min' => 'Il nome deve essere lungo almeno :min caratteri',
             'name.max' =>'Il nome deve essere lungo massimo :max caratteri',
+
+            'price.required' => 'Il prezzo è richiesto',
+            'price.min' => 'Il prezzo deve essere di almeno :min caratteri',
+            'price.max' => 'Il prezzo non può essere superiore a :max €'
         ];
        
     }
