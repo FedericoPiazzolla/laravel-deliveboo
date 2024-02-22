@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrazione') }}</div>
 
                 <div class="card-body">
-                    <form name="myForm" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <form name="myForm" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" onsubmit="return validateForm()" id='registrationForm'>
                         @csrf
 
                         {{-- DATI RISTORATORE --}}
@@ -19,12 +19,12 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                
+                                {{-- Gestione errore name --}}
+                               <span>
+                                   <strong id="nameError" class='errorFormMsg ms-1'></strong>
+                               </span>
 
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -34,11 +34,10 @@
                             <div class="col-md-6">
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
-                                @error('surname')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Gestione errore cognome --}}
+                                <span>
+                                    <strong id="surnameError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -48,11 +47,9 @@
                             <div class="col-md-6">
                                 <input id="vat_number" type="vat_number" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number">
 
-                                @error('vat_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                <span>
+                                    <strong id="vatError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
