@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('restaurants', function (Blueprint $table) {
-            $table->string('restaurant_logo')->nullable()->after('restaurant_image');
+            $table->string('restaurant_logo')->after('restaurant_image');
         });
     }
 
