@@ -17,17 +17,17 @@
       <tbody>
 
           @foreach ($orders as $order)
-         
+
               <tr>
                   <th scope="row">{{ $order->id }}</th>
                   <td>{{$order->interested_user_email}}</td>
                   <td>{{$order->interested_user_address}}</td>
                   <td>{{$order->interested_user_phone}}</td>
                   <td>{{$order->dish_quantity}}</td>
-            
+
               </tr>
           @endforeach
-          
+
 
 
       </tbody>
