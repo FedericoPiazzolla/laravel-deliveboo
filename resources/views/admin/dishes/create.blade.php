@@ -35,13 +35,16 @@
             <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" required>
         </div>
 
-        <select class="form-select" aria-label="Default select example">
-            <option @selected(old('available') === 'true')>Disponibile</option>
-            <option @selected(old('available') === 'false') value="1">non disponibile</option>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option @selected(old('available') === 'true')>Disponibile</option>
+                <option @selected(old('available') === 'false') value="1">non disponibile</option>
 
-        </select>
+            </select>
+        </div>
+        
 
-        <button class="btn" type="submit">Salva</button>
+        <button class="btn btn-success" type="submit">Salva</button>
     </form>
 
     
