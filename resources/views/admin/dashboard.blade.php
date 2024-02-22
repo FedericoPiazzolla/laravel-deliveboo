@@ -16,7 +16,9 @@
 
                         <h4 class="mb-4"> Bentornato {{ Auth::user()->name }}! ecco il tuo ristorante:</h4>
                         <h1 class="text-center mb-4" style="color: #173736">{{ $restaurant->restaurant_name }}</h1>
-                        <img src="{{ $restaurant->restaurant_image }}" class="card-img-top mt-3 w-70" alt="...">
+
+                        <img src="{{ Str::startsWith($restaurant->restaurant_image, 'http') ? $restaurant->restaurant_image : asset("storage/".$restaurant->restaurant_image)}}" alt="{{ $restaurant->name }}">
+
                         <div class="card-body">
                             <div class="mb-4">
                                 <p class="card-text">

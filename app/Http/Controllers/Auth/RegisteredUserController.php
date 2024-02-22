@@ -75,15 +75,15 @@ class RegisteredUserController extends Controller
         // Controllo del caricamento del file restaurant_image nel form di creazione
         
         if($request->hasFile('restaurant_image')) {
-            $path = Storage::put('uploads', $request->restaurant_image);
-            $new_restaurant->restaurant_image = $path;
+            $image_path = Storage::put('dish_image', $request->restaurant_image);
+            $new_restaurant->restaurant_image = $image_path;
         }
      
          // Controllo del caricamento del file restaurant_logo nel form di creazione
         
          if($request->hasFile('restaurant_logo')) {
-            $path = Storage::put('uploads', $request->restaurant_logo);
-            $new_restaurant->restaurant_logo = $path;
+            $image_path = Storage::put('dish_image', $request->restaurant_logo);
+            $new_restaurant->restaurant_logo = $image_path;
         }
 
         /////////////

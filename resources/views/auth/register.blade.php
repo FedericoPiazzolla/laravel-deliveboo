@@ -140,7 +140,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <img id="preview_image" src="" alt="" style="max-width: 400px">
+                            <img id="preview_image" src="" alt="" style="width:150px; border-radius:30px;">
                         </div>
                         {{-- / IMAGE --}}
 
@@ -161,7 +161,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <img id="preview_logo" src="" alt="" style="max-width: 400px">
+                            <img id="preview_logo" src="" alt="" style="width:150px; border-radius:30px;">
                         </div> 
                         {{-- / LOGO --}}
 
