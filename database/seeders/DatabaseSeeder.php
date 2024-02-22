@@ -22,10 +22,14 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            // Seeder delle tabelle
             UsersTableSeeder::class,
             RestaurantsTableSeeder::class,
-            DishesTableSeeder::class,
             TypesTableSeeder::class,
+            DishesTableSeeder::class,
+            OrdersTableSeeder::class,
+            
+            // Seeder delle tabelle pivot
             RestaurantTypeSeeder::class,
         ]);
     }

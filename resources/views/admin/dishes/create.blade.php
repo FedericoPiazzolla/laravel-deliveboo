@@ -26,13 +26,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">descrizione</label>
+            <label for="description" class="form-label">Descrizione</label>
             <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
         </div>
 
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
-            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" required>
+            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
         </div>
 
         <div class="mb-3">
