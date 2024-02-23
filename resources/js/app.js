@@ -67,9 +67,6 @@ function validateForm() {
 
 // ************ VALIDAZIONE FORM REGISTRAZIONE ***************** ///
 
-let restaurant_image = document.getElementById("restaurant_image").value;
-let restaurant_logo = document.getElementById("restaurant_logo").value;
-
 const onlyLettersPattern = /^[a-zA-Z ]+$/;
 const onlyNumbersPattern = /^[0-9]+$/;
 const numbersLettersPattern = /^[A-Za-z0-9 ]+$/;
@@ -199,31 +196,60 @@ document
     });
 
 //   Errore image
-// const extensionsSupported = [
-//     ".png",
-//     ".jpeg",
-//     ".jpg",
-//     ".svg",
-//     ".bpm",
-//     ".gif",
-//     ".webp",
-// ];
 
-// for (const extension of extensionsSupported) {
-//     if (!restaurant_image.endsWith(extension)) {
-//         document.getElementById("imageError").textContent =
-//             "Il formato del file non è supportato. Inserire un file: png, jpeg, jpg, svg, bpm, gif, webp.";
-//     }
-//     document.getElementById("restaurant_image").focus();
-// }
+let restaurant_image = document.getElementById("restaurant_image");
 
-// for (const extension of extensionsSupported) {
-//     if (!restaurant_logo.endsWith(extension)) {
-//         document.getElementById("logoError").textContent =
-//             "Il formato del file non è supportato. Inserire un file: png, jpeg, jpg, svg, bpm, gif, webp.";
-//     }
-//     document.getElementById("restaurant_logo").focus();
-// }
+restaurant_image.addEventListener("change", function () {
+    let imageError = document.getElementById("imageError");
+    let uploadedFile = this.files[0];
+    if (uploadedFile) {
+        console.log(uploadedFile.type);
+        const extensionsSupported = [
+            "image/png",
+            "image/jpeg",
+            "image/jpg",
+            "image/svg",
+            "image/bpm",
+            "image/gif",
+            "image/webp",
+        ];
+
+        if (extensionsSupported.includes(uploadedFile.type)) {
+            imageError.textContent = "";
+        } else {
+            imageError.textContent =
+                "Il formato del file non è supportato. Inserire un file: png, jpeg, jpg, svg, bpm, gif, webp";
+        }
+    }
+});
+
+// Errore logo
+
+let restaurant_logo = document.getElementById("restaurant_logo");
+
+restaurant_logo.addEventListener("change", function () {
+    let logoError = document.getElementById("logoError");
+    let uploadedFile = this.files[0];
+    if (uploadedFile) {
+        console.log(uploadedFile.type);
+        const extensionsSupported = [
+            "image/png",
+            "image/jpeg",
+            "image/jpg",
+            "image/svg",
+            "image/bpm",
+            "image/gif",
+            "image/webp",
+        ];
+
+        if (extensionsSupported.includes(uploadedFile.type)) {
+            logoError.textContent = "";
+        } else {
+            logoError.textContent =
+                "Il formato del file non è supportato. Inserire un file: png, jpeg, jpg, svg, bpm, gif, webp";
+        }
+    }
+});
 
 //   Errore indirizzo
 document.getElementById("address").addEventListener("input", function () {
