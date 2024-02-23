@@ -240,8 +240,8 @@
                            <h5>Seleziona il tipo di cuina del tuo ristorante:</h5>
                            <div class="form-check">
                                 @foreach ($types as $type)
-                                    <div>
-                                        <input type="checkbox" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
+                                    <div id="typeForm">
+                                        <input type="checkbox" checked class="ms_check" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
                                     <label for="type-{{ $type->id }}">
                                         {{ $type->name }}
                                     </label>
@@ -252,7 +252,7 @@
 
                              {{-- Errore types --}}
                              <span>
-                                <strong id="typeError" class='errorFormMsg ms-1'></strong>
+                                <strong id="typeError" class='errorFormMsg ms-1'>Selezionare almeno una tipologia per il tuo ristorante</strong>
                             </span>
 
                         </div>
@@ -263,7 +263,7 @@
 
                         <div class="mt-5 row m-0 text-center ">
                             <div class="col offset-md-4 m-0">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" onclick="validateCheckbox" class="btn btn-primary">
                                     {{ __('Registrati') }}
                                 </button>
                             </div>

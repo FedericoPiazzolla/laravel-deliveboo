@@ -286,8 +286,12 @@ document.getElementById("city").addEventListener("input", function () {
 
     if (!onlyLettersPattern.test(city)) {
         errorSpan.textContent = "Il campo può contenere solo lettere";
+        this.classList.remove("is-valid");
+        this.classList.add("is-invalid");
     } else {
         errorSpan.textContent = "";
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
     }
     if (city === "") {
         errorSpan.textContent = "Il campo deve essere compilato";
@@ -295,8 +299,22 @@ document.getElementById("city").addEventListener("input", function () {
 });
 
 //   Errore types
-// let checkboxes = document.querySelectorAll("type-{{ $type->id }}");
-// if (checkboxes.length < 1) {
-//     document.getElementById("typeError").textContent =
-//         "Scegliere almeno una tipologia per il proprio ristorante.";
-// }
+
+let checkboxes = document.querySelectorAll('div[id="typeForm"]');
+
+for (let x = 0; x < checkboxes.length; x++) {
+    checkboxes[x].addEventListener("click", function () {
+        let typeError = document.getElementById("typeError");
+
+        let boxesChecked = document.querySelectorAll(
+            'input[class="ms_check"]:checked'
+        );
+        console.log(boxesChecked.length);
+        if (boxesChecked.length > 0) {
+            typeError.textContent = "";
+        } else {
+            typeError.textContent =
+                "Selezionare almeno una tipologia per il tuo ristorante";
+        }
+    });
+}
