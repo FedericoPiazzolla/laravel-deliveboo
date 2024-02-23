@@ -25,7 +25,7 @@
         {{-- name --}}
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required pattern="[A-Za-z0-9\s]+">
         </div>
         {{-- /name --}}
 
@@ -33,7 +33,7 @@
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                name="image" value="{{ old('image') }}" onchange="showImage(event)">
+                name="image" value="{{ old('image') }}" onchange="showImage(event)" accept=".jpg, .jpeg, .svg, .png">
         </div>
 
         @error('image')
@@ -49,7 +49,7 @@
         {{-- price --}}
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
-            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
+            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" pattern="^\d{1,4}(\.\d{2})?$" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
         </div>
         {{-- /price --}}
 

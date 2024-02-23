@@ -13,7 +13,7 @@
 
     <div class="mb-3 has-validation">
       <label for="name" class="form-label">Nome</label>
-      <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}" required>
+      <input type="text" required minlength="5" autofocus class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}" required>
 
       @error('title')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -22,7 +22,7 @@
 
     <div class="mb-3 has-validation">
       <label for="price" class="form-label">Prezzo</label>
-      <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" onblur="this.value = parseFloat(this.value).toFixed(2)" step=0.01 min=0 max=99.99 required>
+      <input type="number" required class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" onblur="this.value = parseFloat(this.value).toFixed(2)" step=0.01 min=0 max=99.99 required>
 
       @error('price')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -39,7 +39,7 @@
     {{-- Avaliable --}}
     <div class="mb-3">
       <label for="available" class="form-label">Disponibilità</label>
-      <select class="form-select" id="available" name="available">
+      <select class="form-select" required id="available" name="available">
         <option value="1" {{ old('available', $dish->available) == 1 ? 'selected' : '' }}>Si</option>
         <option value="0" {{ old('available', $dish->available) == 0 ? 'selected' : '' }}>No</option>
       </select>
@@ -48,7 +48,7 @@
 
     <div class="mb-3">
       <label for="description" class="form-label">Descrizione</label>
-      <textarea class="form-control" name="description" id="description" rows="3">{{ old('description', $dish->description) }}</textarea>
+      <textarea class="form-control" maxlength="250" name="description" id="description" rows="3">{{ old('description', $dish->description) }}</textarea>
     </div>
    
 
