@@ -6,7 +6,7 @@ return [
         "interested_user_surname" => "Rossi",
         "interested_user_address" => "Via Verdi, 10, 20121 Milano",
         "interested_user_email" => "giovanni.rossi@gmail.com",
-        "interested_user_phone" => "+39021234567"
+        "interested_user_phone" => "+390212345678"
     ],
     [
         "interested_user_name" => "Francesca",

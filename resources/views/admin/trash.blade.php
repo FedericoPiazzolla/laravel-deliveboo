@@ -41,7 +41,7 @@
                     @csrf
                     @method('DELETE')
 
-                    <button class="btn btn-danger" type="submit">
+                    <button class="btn btn-danger btn-delete" type="submit" data-title="{{ $dish->name }}">
                       <i class="fa-solid fa-trash"></i>
                     </button>
                   </form>
@@ -59,6 +59,8 @@
         <a href="{{ route('admin.dishes.index') }}" class="btn btn-warning float-end">BACK</a>
     </div>
   @endif
-  
+  @include('admin.partials.modal')
 </div>
+
 @endsection
+

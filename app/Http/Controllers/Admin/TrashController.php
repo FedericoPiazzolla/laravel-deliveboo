@@ -25,9 +25,9 @@ class TrashController extends Controller
         $dish->restore();
 
         if ((dish::onlyTrashed()->count()) === 0) {
-            return redirect()->route('admin.dishes.index')->with('trash_message', 'All dishs has been restored');
+            return redirect()->route('admin.dishes.index')->with('trash_message', 'tutti i piatti sono stati riaggiunti');
         } else {
-            return redirect()->back()->with('message', "$dish->name has been restored");
+            return redirect()->back()->with('message', "$dish->name è stato riaggiunto alla lista piatti");
         }
     }
 
@@ -37,7 +37,7 @@ class TrashController extends Controller
 
         $dish->forceDelete();
 
-        return redirect()->back()->with('def_del_mess', "$dish->name has been permanently eliminated");
+        return redirect()->back()->with('def_del_mess', "$dish->name è stato eliminato definitivamente");
     }
 
     // function for validate user->restaurant_id
