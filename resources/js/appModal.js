@@ -13,6 +13,7 @@ buttons.forEach((button) => {
         const deleteModal = new bootstrap.Modal(deleteModalElem);
 
         const title = button.getAttribute("data-title");
+        document.getElementById("title-to-delete-def").innerHTML = title;
         document.getElementById("title-to-delete").innerHTML = title;
 
         document.getElementById("delete-btn").addEventListener("click", () => {

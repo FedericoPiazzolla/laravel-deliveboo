@@ -7,7 +7,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <p>sei sicuro/a di voler eliminare definitivamente questo piatto "<span id="title-to-delete"></span>" ?</p>
+             <p class="{{ Route::currentRouteName() == 'admin.dishes.index' ? 'd-none' : '' }}">sei sicuro/a di voler eliminare definitivamente questo piatto "<span id="title-to-delete-def"></span>" ?</p>
+              <p class="{{ Route::currentRouteName() == 'admin.trash' ? 'd-none' : '' }}">vuoi spostare "<span id="title-to-delete"></span>" nella pagina piatti eliminati ?</p>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annulla</button>
