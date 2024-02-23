@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Usando Vite -->
-    @vite(['resources/js/app.js', 'resources/js/validations.js', 'resources/js/appModal.js' ])
+    @vite(['resources/js/app.js', 'resources/js/validations.js' ])
 </head>
 
 <body>
