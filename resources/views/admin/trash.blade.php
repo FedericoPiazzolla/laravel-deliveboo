@@ -7,7 +7,7 @@
   @if (session('def_del_mess'))
     <div class="container text-center">
         <p class="alert alert-danger fw-bold">
-            {{ strtoupper(session('def_del_mess')) }}
+            {{ ucfirst(session('def_del_mess')) }}
         </p>
     </div>
   @endif
