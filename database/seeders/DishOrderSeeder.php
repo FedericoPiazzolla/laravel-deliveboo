@@ -20,10 +20,13 @@ class DishOrderSeeder extends Seeder
         $dishes_orders = config('dish_order');
 
         foreach ($dishes_orders as $dish_order) {
-            $dishes = Dish::where('id', $dish_order["dish_id"])->get();
-                foreach ($dishes as $dish) {
-                    $dish->orders()->attach($dish_order["order_id"]);
-                }
+            $dishes = [
+                "0" => Dish::where('id', $dish_order["dish_id"][0])->first(),
+                "1" => Dish::where('id', $dish_order["dish_id"][1])->first(),
+            ];
+            foreach ($dishes as $dish) {
+                $dish->orders()->attach($dish_order["order_id"]);
+            }
         }
     }
 }
