@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrazione') }}</div>
 
                 <div class="card-body">
-                    <form name="myForm" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" onsubmit="return validateForm()" id='registrationForm'>
+                    <form name="myForm" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id='registrationForm'>
                         @csrf
 
                         {{-- DATI RISTORATORE --}}
@@ -22,7 +22,7 @@
                                 
                                 {{-- Gestione errore name --}}
                                <span>
-                                   <strong id="nameError" class='errorFormMsg ms-1'></strong>
+                                   <strong id="nameError" class='errorFormMsg ms-1'></strong><br>
                                </span>
 
                             </div>
@@ -35,7 +35,7 @@
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
                                 {{-- Gestione errore cognome --}}
-                                <span>
+                                <span >
                                     <strong id="surnameError" class='errorFormMsg ms-1'></strong>
                                 </span>
                             </div>
@@ -47,9 +47,14 @@
                             <div class="col-md-6">
                                 <input id="vat_number" type="vat_number" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number">
 
-                                <span>
-                                    <strong id="vatError" class='errorFormMsg ms-1'></strong>
-                                </span>
+                                {{-- Gestione vat_number --}}
+                                
+                                <span class="ms-1 errorFormMsg fw-bolder">
+                                    <ul class="list-unstyled m-0 p-0" id="vatError">
+                                    </ul>
+                                  </span>
+                                
+                                
                             </div>
                         </div>
 
@@ -57,13 +62,12 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Gestione email --}}
+                                <span >
+                                    <strong id="emailError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -73,11 +77,10 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                               {{-- Gestione password --}}
+                               <span >
+                                <strong id="passwordError" class='errorFormMsg ms-1'></strong>
+                            </span>
                             </div>
                         </div>
 
@@ -99,11 +102,10 @@
                             <div class="col-md-6">
                                 <input id="restaurant_name" type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{ old('restaurant_name') }}" required autocomplete="name" autofocus>
 
-                                @error('restaurant_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Errore nome ristoranre --}}
+                                <span>
+                                    <strong id="restaurantNameError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -111,13 +113,12 @@
                             <label for="restaurant_email" class="col-md-4 col-form-label text-md-right">{{ __('Email Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="restaurant_email" type="email" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_email" value="{{ old('restaurant_email') }}" required autocomplete="name" autofocus>
+                                <input id="restaurant_email" type="text" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_email" value="{{ old('restaurant_email') }}" required autocomplete="name" autofocus>
 
-                                @error('restaurant_email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Errore email ristorante --}}
+                                <span>
+                                    <strong id="restaurantEmailError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -126,13 +127,13 @@
                             <label for="restaurant_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="restaurant_image" type="file" class="form-control @error('restaurant_email') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus>
+                                <input id="restaurant_image" type="file" class="form-control @error('restaurant_image') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus>
 
-                                @error('restaurant_image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                 {{-- Errore image --}}
+                                 <span>
+                                    <strong id="imageError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
+                                
                             </div>
                         </div>
 
@@ -149,11 +150,10 @@
                             <div class="col-md-6">
                                 <input id="restaurant_logo" type="file" class="form-control @error('restaurant_logo') is-invalid @enderror" name="restaurant_logo" value="{{ old('restaurant_logo') }}" required autocomplete="name" autofocus>
 
-                                @error('restaurant_logo')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                               {{-- Errore logo --}}
+                               <span>
+                                <strong id="logoError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -171,27 +171,26 @@
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name" autofocus placeholder="Via Tuo Ristorante">
 
-                                @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Errore indirizzo --}}
+                                <span>
+                                    <strong id="addressError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
                             </div>
                         </div>
                         {{-- /VIA --}}
 
                         {{-- NUMERO CIVICO --}}
                         <div class="mb-4 row">
-                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
+                            <label for="addressNumber" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
 
                             <div class="col-md-6">
-                                <input id="number" type="number" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="name" autofocus>
+                                <input id="addressNumber" type="number" class="form-control @error('number') is-invalid @enderror" name="addressNumber" value="{{ old('number') }}" required autocomplete="name" autofocus>
 
-                                @error('number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
+                                {{-- Errore numero civico --}}
+                                <span>
+                                    <strong id="addressNumberError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                @enderror
+                            
                             </div>
                         </div>
                         {{-- /NUMBERO CIVICO --}}
@@ -203,12 +202,12 @@
                             <div class="col-md-6">
                                 <input id="cap" type="number" class="form-control @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="name" autofocus>
 
-                                @error('cap')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                            {{-- Errore cap --}}
+                            <span>
+                                <strong id="capError" class='errorFormMsg ms-1'></strong>
+                            </span>
+                            
+                        </div>
                         </div>
                         {{-- /CAP --}}
 
@@ -219,14 +218,14 @@
                             <div class="col-md-6">
                                 <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="name" autofocus>
 
-                                @error('city')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                             {{-- Errore city --}}
+                            <span>
+                                <strong id="cityError" class='errorFormMsg ms-1'></strong>
+                            </span>
+
                             </div>
                         </div>
-                        {{-- /CAP --}}
+                        {{-- /CITTÀ --}}
 
                         {{-- / INDIRIZZO RISTORANTE --}}
 
@@ -244,6 +243,13 @@
                                     </div>  
                                 @endforeach
                            </div>
+
+
+                             {{-- Errore types --}}
+                             <span>
+                                <strong id="typeError" class='errorFormMsg ms-1'></strong>
+                            </span>
+
                         </div>
                         {{-- / TYPES --}}
 
