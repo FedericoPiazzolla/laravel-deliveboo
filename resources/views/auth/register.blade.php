@@ -18,7 +18,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus onKeyUp="validateRegistrationForm()">
                                 
                                 {{-- Gestione errore name --}}
                                <span>
@@ -48,11 +48,15 @@
                                 <input id="vat_number" type="vat_number" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number">
 
                                 {{-- Gestione vat_number --}}
+                         
+                                 <span >
+                                    <strong id="vatNumberError" class='errorFormMsg ms-1'></strong>
+                                </span>
                                 
-                                <span class="ms-1 errorFormMsg fw-bolder">
+                                {{-- <span class="ms-1 errorFormMsg fw-bolder">
                                     <ul class="list-unstyled m-0 p-0" id="vatError">
                                     </ul>
-                                  </span>
+                                  </span> --}}
                                 
                                 
                             </div>
@@ -169,7 +173,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name" autofocus placeholder="Via Tuo Ristorante">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="name" autofocus>
 
                                 {{-- Errore indirizzo --}}
                                 <span>
@@ -184,7 +188,7 @@
                             <label for="addressNumber" class="col-md-4 col-form-label text-md-right">{{ __('Numero Civico') }}</label>
 
                             <div class="col-md-6">
-                                <input id="addressNumber" type="number" class="form-control @error('number') is-invalid @enderror" name="addressNumber" value="{{ old('number') }}" required autocomplete="name" autofocus>
+                                <input id="addressNumber" type="string" class="form-control @error('number') is-invalid @enderror" name="addressNumber" value="{{ old('number') }}" required autocomplete="name" autofocus>
 
                                 {{-- Errore numero civico --}}
                                 <span>
@@ -200,7 +204,7 @@
                             <label for="cap" class="col-md-4 col-form-label text-md-right">{{ __('CAP') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cap" type="number" class="form-control @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="name" autofocus>
+                                <input id="cap" type="string" class="form-control @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="name" autofocus>
 
                             {{-- Errore cap --}}
                             <span>
@@ -216,12 +220,13 @@
                             <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Città') }}</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="name" autofocus>
+                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required autocomplete="name" autofocus>
 
                              {{-- Errore city --}}
                             <span>
                                 <strong id="cityError" class='errorFormMsg ms-1'></strong>
                             </span>
+
 
                             </div>
                         </div>
