@@ -89,7 +89,7 @@ class RegisteredUserController extends Controller
         /////////////
 
         // Creo la concatenazione dei dati arrivati dal form per comporre l'indirizzo
-        $restaurant_address = $form_data["address"].", ".$form_data["number"].", ".$form_data["cap"].", ".$form_data["city"];
+        $restaurant_address = $form_data["address"].", ".$form_data["addressNumber"].", ".$form_data["cap"].", ".$form_data["city"];
 
         $new_restaurant->fill($form_data);
         
