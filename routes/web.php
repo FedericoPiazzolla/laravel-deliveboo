@@ -34,7 +34,10 @@ Route::middleware(['auth', 'verified'])
     Route::get('trash', [TrashController::class, 'trash'])->name('trash');
     Route::post('restore/{dish}', [TrashController::class, 'restore'])->withTrashed()->name('dishes.restore');
     Route::delete("def_destroy/{dish}", [TrashController::class, "defDestroy"])->withTrashed()->name('dishes.def_destroy');
-    Route::get('order',[OrderController::class, 'index'])->name('order');
+
+    // ordini
+    Route::get('orders',[OrderController::class, 'index'])->name('orders');
+    Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 });
 
 

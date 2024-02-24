@@ -21,6 +21,23 @@ class OrderController extends Controller
                 $query->where('restaurant_id', $restaurant->id);
             })->get();
 
-        return view('admin.order', compact('orders'));
+        return view('admin.orders.index', compact('orders'));
+    }
+
+    public function show($order)
+    {
+        $order = Order::with('dishes')->where('id', $order)->first();
+
+        $dishes = $order->dishes;
+
+        foreach ($dishes as $dish) {
+            $dish_quantity = DB::table('dish_order')
+                ->select('dish_quantity')
+                ->where('order_id', $order->id)
+                ->where('dish_id', $dish->id)
+                ->get();
+        }
+
+        return view('admin.orders.show', compact('order', 'dishes'));
     }
 }

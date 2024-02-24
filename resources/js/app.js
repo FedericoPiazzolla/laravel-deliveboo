@@ -1,5 +1,6 @@
 import "./bootstrap";
 import "./appModal";
+import "./dishForms";
 
 import "~resources/scss/app.scss";
 import * as bootstrap from "bootstrap";

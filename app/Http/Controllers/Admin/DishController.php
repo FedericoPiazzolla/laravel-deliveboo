@@ -95,6 +95,7 @@ class DishController extends Controller
         if($dish->restaurant->user_id !== Auth::user()->id) {
             abort(404);
         }
+
         return view('admin.dishes.edit', compact('dish'));
     }
 
@@ -124,6 +125,6 @@ class DishController extends Controller
     {
         $dish->delete();
 
-        return redirect()->route('admin.dishes.index')->with('message', "$dish->name è stato cancellato");
+        return redirect()->route('admin.dishes.index')->with('message', "$dish->name è stato spostato nei piatti eliminati");
     }
 }

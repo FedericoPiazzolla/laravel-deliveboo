@@ -277,3 +277,56 @@ for (let x = 0; x < checkboxes.length; x++) {
         }
     });
 }
+
+document
+    .getElementById("regFormBtn")
+    .addEventListener("click", function (event) {
+        let nameError = document.getElementById("nameError").textContent;
+        let surnameError = document.getElementById("surname").textContent;
+        let vatNumberError =
+            document.getElementById("vatNumberError").textContent;
+        let emailError = document.getElementById("emailError").textContent;
+        let passwordError =
+            document.getElementById("passwordError").textContent;
+        let restaurantNameError = document.getElementById(
+            "restaurantNameError"
+        ).textContent;
+        let restaurantEmailError = document.getElementById(
+            "restaurantEmailError"
+        ).textContent;
+        let imageError = document.getElementById("imageError").textContent;
+        let logoError = document.getElementById("logoError").textContent;
+        let addressError = document.getElementById("addressError").textContent;
+        let addressNumberError =
+            document.getElementById("addressNumberError").textContent;
+        let capError = document.getElementById("capError").textContent;
+        let cityError = document.getElementById("cityError").textContent;
+        let typeError = document.getElementById("typeError").textContent;
+
+        let errorsList = [
+            nameError,
+            surnameError,
+            surnameError,
+            vatNumberError,
+            emailError,
+            passwordError,
+            restaurantNameError,
+            restaurantEmailError,
+            imageError,
+            logoError,
+            addressError,
+            addressNumberError,
+            capError,
+            cityError,
+            typeError,
+        ];
+
+        for (let x = 0; x < errorsList.length; x++) {
+            console.log(errorsList[x]);
+            if (errorsList[x] !== "") {
+                console.log(errorsList);
+                event.preventDefault();
+                window.scrollTo(0, 0);
+            }
+        }
+    });
