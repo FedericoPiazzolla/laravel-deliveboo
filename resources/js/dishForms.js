@@ -52,7 +52,7 @@ document.getElementById("price").addEventListener("input", function () {
     let price = this.value;
     let errorSpan = document.getElementById("priceError");
 
-    if (!onlyNumbersPattern.test(price)) {
+    if (price !== number) {
         errorSpan.textContent = "Il campo può contenere solo numeri";
     } else {
         errorSpan.textContent = "";
