@@ -30,10 +30,10 @@
     </div>
 
     {{-- image --}}
-    {{-- <div class="mb-3">
+    <div class="mb-3">
       <label for="image_path" class="form-label">Image</label>
       <input type="file" class="form-control" id="image_path" name="image_path">
-    </div> --}}
+    </div>
     {{-- /image --}}
 
     {{-- Avaliable --}}
