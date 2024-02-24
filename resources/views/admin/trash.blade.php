@@ -16,9 +16,9 @@
     <table class="table">
       <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th class="text-center" scope="col">Restore</th>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th class="text-center" scope="col">Ripristina/Elimina</th>
           </tr>
       </thead>
       <tbody>
@@ -56,7 +56,7 @@
   @else
     <div class="d-flex flex-column align-items-center mb-4">
         <h1 class="text-center mb-4">Il tuo cestino è vuoto</h1>
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-warning float-end">BACK</a>
+        <a href="{{ route('admin.dishes.index') }}" class="btn btn-warning float-end">Indietro</a>
     </div>
   @endif
   @include('admin.partials.modal')
