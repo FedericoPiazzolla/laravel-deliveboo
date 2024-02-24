@@ -77,8 +77,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'admin.order' ? 'link_selected' : '' }}"
-                                    href="{{ route('admin.order') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.orders' ? 'link_selected' : '' }}"
+                                    href="{{ route('admin.orders') }}">
                                     <i class="fa-solid fa-list fa-lg fa-fw"></i> Ordini
                                 </a>
                             </li>

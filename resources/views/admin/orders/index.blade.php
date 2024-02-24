@@ -7,9 +7,10 @@
       <thead>
           <tr>
               <th scope="col">Id</th>
-              <th scope="col">email utente</th>
-              <th scope="col">indirizzo utente</th>
-              <th scope="col">telefono</th>
+              <th scope="col">Email utente</th>
+              <th scope="col">Indirizzo utente</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Dettaglio</th>
           </tr>
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
                   <td>{{$order->interested_user_email}}</td>
                   <td>{{$order->interested_user_address}}</td>
                   <td>{{$order->interested_user_phone}}</td>
+                  <td><a class="btn btn-primary ms-3" href="{{ route("admin.orders.show", ["id" => $order->id]) }}"><i class="fa-solid fa-eye"></i></a></td>
               </tr>
           @endforeach
       </tbody>
