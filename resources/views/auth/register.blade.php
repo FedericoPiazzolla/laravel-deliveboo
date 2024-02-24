@@ -18,7 +18,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus onKeyUp="validateRegistrationForm()">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 
                                 {{-- Gestione errore name --}}
                                <span>
@@ -52,13 +52,7 @@
                                  <span >
                                     <strong id="vatNumberError" class='errorFormMsg ms-1'></strong>
                                 </span>
-                                
-                                {{-- <span class="ms-1 errorFormMsg fw-bolder">
-                                    <ul class="list-unstyled m-0 p-0" id="vatError">
-                                    </ul>
-                                  </span> --}}
-                                
-                                
+                        
                             </div>
                         </div>
 
@@ -263,7 +257,7 @@
 
                         <div class="mt-5 row m-0 text-center ">
                             <div class="col offset-md-4 m-0">
-                                <button type="submit" onclick="validateCheckbox" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="regFormBtn">
                                     {{ __('Registrati') }}
                                 </button>
                             </div>
