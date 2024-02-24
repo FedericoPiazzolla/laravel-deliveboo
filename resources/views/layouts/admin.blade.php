@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Usando Vite -->
-    @vite(['resources/js/app.js', 'resource/js/dishValidations.js'])
+    @vite(['resources/js/app.js'])
 </head>
 
 <body>
