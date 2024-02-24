@@ -1,59 +1,89 @@
 @extends('layouts.admin')
 
-{{-- name', 'slug', 'description', 'price', 'available' --}}
-
 @section('content')
-<div class="container-mt-5">
-  <a class="my-5 btn btn-success" href="{{ route('admin.dishes.index') }}">&LeftArrow; Indietro</a>
-  <h2 class="flex-grow-1">Pagina di Modifica</h2>
-
-  <form name="myForm" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-    @csrf
-    @method('PUT')
-
-    <div class="mb-3 has-validation">
-      <label for="name" class="form-label">Nome</label>
-      <input type="text" required minlength="5" autofocus class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $dish->name) }}" required>
-
-      @error('title')
-        <div class="invalid-feedback">{{ $message }}</div>
-      @enderror
-    </div>
-
-    <div class="mb-3 has-validation">
-      <label for="price" class="form-label">Prezzo</label>
-      <input type="number" required class="form-control @error('price') is-invalid @enderror" id="price" price="price" value="{{ old('price', $dish->price) }}" name="price" onblur="this.value = parseFloat(this.value).toFixed(2)" step=0.01 min=0 max=99.99 required>
-
-      @error('price')
-        <div class="invalid-feedback">{{ $message }}</div>
-      @enderror
-    </div>
-
-    {{-- image --}}
-    {{-- <div class="mb-3">
-      <label for="image_path" class="form-label">Image</label>
-      <input type="file" class="form-control" id="image_path" name="image_path">
-    </div> --}}
-    {{-- /image --}}
-
-    {{-- Avaliable --}}
+<div class="container mt-5">
     <div class="mb-3">
-      <label for="available" class="form-label">Disponibilità</label>
-      <select class="form-select" required id="available" name="available">
-        <option value="1" {{ old('available', $dish->available) == 1 ? 'selected' : '' }}>Si</option>
-        <option value="0" {{ old('available', $dish->available) == 0 ? 'selected' : '' }}>No</option>
-      </select>
+        <a class="btn btn-success" href="{{ url()->previous() }}">&leftarrow; Indietro</a>
     </div>
-    {{-- /Avaliable --}}
+    <h2 class="text-center">Pagina di creazione di un nuovo piatto</h2>
 
-    <div class="mb-3">
-      <label for="description" class="form-label">Descrizione</label>
-      <textarea class="form-control" maxlength="250" name="description" id="description" rows="3">{{ old('description', $dish->description) }}</textarea>
-    </div>
-   
+    {{-- Controllo errori --}}
+    {{-- @if ($errors->any())
+        <div class="alert alert-danger mt-3">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif --}}
+    {{-- /Controllo errori --}}
 
-    <button class="btn btn-warning" type="submit">Modifica</button>
-  </form>
-</div>
+    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.update', ['dish' => $dish->slug]) }}" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data" id="dishCreationForm">
+        @csrf
+
+        {{-- name --}}
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control dish_name" id="name" name="name" value="{{ old('name') }}" required>
+            <span>
+                <strong id="dishNameError" class='errorFormMsg ms-1'></strong>
+            </span>
+        </div>
+        {{-- /name --}}
+
+        {{-- Image --}}
+        <div class="mb-3">
+            <label for="image" class="form-label">Immagine</label>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                name="image" value="{{ old('image') }}" onchange="showImage(event)" accept=".jpg, .jpeg, .svg, .png, .bpm, .gif, .webp">
+        </div>
+
+        {{-- Preview image --}}
+        <div class="">
+            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
+        </div>
+
+        {{-- Errore img --}}
+        <span>
+            <strong id="imageError" class='errorFormMsg ms-1'></strong>
+        </span>
+      
+        
+        {{-- /Image --}}
+
+        {{-- price --}}
+        <div class="input-group">
+            <label for="price" class="form-label w-100">Prezzo</label> 
+            <span class="input-group-text">€</span>
+            <input name="price" id="price" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" value="{{ old('price') }}" pattern="^\d{1,4}(\.\d{2})?$" onblur="this.value = parseFloat(this.value).toFixed(2)" required>
+        </div>
+
+        <span>
+            <strong id="priceError" class='errorFormMsg ms-1'></strong>
+        </span>
+        {{-- /price --}}
+
+        {{-- description --}}
+        <div class="mt-3">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+        </div>
+        <span>
+            <strong id="descriptionError" class='errorFormMsg ms-1'></strong>
+        </span>
+        {{-- /description --}}        
+        
+        <div class="mt-3">
+            <button class="btn btn-success" type="submit" id="dishCreateBtn">Salva</button>
+        </div>
+    </form>
+
+    <script>
+        function showImage(event) {
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 
 @endsection
