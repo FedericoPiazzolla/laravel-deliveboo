@@ -125,7 +125,7 @@
                             <label for="restaurant_image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="restaurant_image" type="file" class="form-control @error('restaurant_image') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus>
+                                <input id="restaurant_image" type="file" class="form-control @error('restaurant_image') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus accept=".jpg, .jpeg, .svg, .png, .bpm, .gif, .webp">
 
                                  {{-- Errore image --}}
                                  <span>
@@ -146,7 +146,7 @@
                             <label for="restaurant_logo" class="col-md-4 col-form-label text-md-right">{{ __('Logo Ristorante') }}</label>
 
                             <div class="col-md-6">
-                                <input id="restaurant_logo" type="file" class="form-control @error('restaurant_logo') is-invalid @enderror" name="restaurant_logo" value="{{ old('restaurant_logo') }}" required autocomplete="name" autofocus>
+                                <input id="restaurant_logo" type="file" class="form-control @error('restaurant_logo') is-invalid @enderror" name="restaurant_logo" value="{{ old('restaurant_logo') }}" required autocomplete="name" autofocus accept=".jpg, .jpeg, .svg, .png, .bpm, .gif, .webp">
 
                                {{-- Errore logo --}}
                                <span>

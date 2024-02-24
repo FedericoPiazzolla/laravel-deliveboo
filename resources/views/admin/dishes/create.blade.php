@@ -19,13 +19,16 @@
     @endif
     {{-- /Controllo errori --}}
 
-    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data">
+    <form name="myForm" class="mt-5" action="{{ route('admin.dishes.store') }}" onsubmit="return validateForm()" method="POST" enctype="multipart/form-data" id="dishCreationForm">
         @csrf
 
         {{-- name --}}
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required pattern="[A-Za-z0-9\s]+">
+            <input type="text" class="form-control dish_name" id="name" name="name" value="{{ old('name') }}" required>
+            <span>
+                <strong id="dishNameError" class='errorFormMsg ms-1'></strong>
+            </span>
         </div>
         {{-- /name --}}
 
@@ -33,12 +36,13 @@
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                name="image" value="{{ old('image') }}" onchange="showImage(event)" accept=".jpg, .jpeg, .svg, .png">
+                name="image" value="{{ old('image') }}" onchange="showImage(event)" accept=".jpg, .jpeg, .svg, .png, .bpm, .gif, .webp">
         </div>
 
-        @error('image')
-            <p class="text-danger">{{ $message }}</p>
-        @enderror
+        <span>
+            <strong id="imageError" class='errorFormMsg ms-1'></strong>
+        </span>
+      
 
         <div class="mb-4">
             <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
@@ -61,7 +65,7 @@
         {{-- /description --}}        
         
 
-        <button class="btn btn-success" type="submit">Salva</button>
+        <button class="btn btn-success" type="submit" id="dishCreateBtn">Salva</button>
     </form>
 
     <script>
