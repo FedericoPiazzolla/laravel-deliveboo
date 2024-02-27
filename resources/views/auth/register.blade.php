@@ -237,7 +237,7 @@
                            <div class="form-check">
                                 @foreach ($types as $type)
                                     <div id="typeForm">
-                                        <input type="checkbox" checked class="ms_check" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
+                                        <input type="checkbox" class="ms_check" id="type-{{ $type->id }}" value="{{ $type->id }}" name="types[]">
                                     <label for="type-{{ $type->id }}">
                                         {{ $type->name }}
                                     </label>
