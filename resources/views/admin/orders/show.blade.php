@@ -4,7 +4,7 @@
     <h2 class="mb-4">Dettaglio ordine #{{ $order->id }} di {{ $order->interested_user_name }}
         {{ $order->interested_user_surname }}</h2>
 
-    <table class="table">
+    <table class="table mb-3">
         <thead>
             <tr>
                 <th scope="col">Id piatto</th>
@@ -22,4 +22,6 @@
             @endforeach
         </tbody>
     </table>
+
+    <h4>Totale: <span class="text-success">{{ array_sum($dishes_prices) }}&euro;</span></h4>
 @endsection

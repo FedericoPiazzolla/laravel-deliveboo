@@ -26,10 +26,20 @@ class OrderController extends Controller
 
     public function show($order)
     {
+        // Prendo l'ordine coi suoi piatti
         $order = Order::with('dishes')->where('id', $order)->first();
 
+        // Prendo i piatti dell'ordine
         $dishes = $order->dishes;
 
-        return view('admin.orders.show', compact('order', 'dishes'));
+        // Creo un array in cui pusherò il prezzo di ogni piatto
+        $dishes_prices = [];
+
+        // Per ogni piatto dell'ordine ne pusho il prezzo nell'array dei prezzi appena creato
+        foreach ($dishes as $dish) {
+            $dishes_prices[] = $dish->price * $dish->pivot->dish_quantity;
+        }
+
+        return view('admin.orders.show', compact('order', 'dishes', 'dishes_prices'));
     }
 }
