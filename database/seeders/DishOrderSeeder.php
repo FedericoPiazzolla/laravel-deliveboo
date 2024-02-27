@@ -25,7 +25,7 @@ class DishOrderSeeder extends Seeder
                 "1" => Dish::where('id', $dish_order["dish_id"][1])->first(),
             ];
             foreach ($dishes as $dish) {
-                $dish->orders()->attach($dish_order["order_id"]);
+                $dish->orders()->attach($dish_order["order_id"], ['dish_quantity' => rand(1, 3)]);
             }
         }
     }
