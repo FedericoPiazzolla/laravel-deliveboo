@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row">{{ $dish->id }}</th>
                     <td>{{ $dish->name }}</td>
-                    <td></td>
+                    <td><span class="ms-4">{{ $dish->pivot->dish_quantity }}</span></td>
                 </tr>
             @endforeach
         </tbody>

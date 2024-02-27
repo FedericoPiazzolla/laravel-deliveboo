@@ -30,14 +30,6 @@ class OrderController extends Controller
 
         $dishes = $order->dishes;
 
-        foreach ($dishes as $dish) {
-            $dish_quantity = DB::table('dish_order')
-                ->select('dish_quantity')
-                ->where('order_id', $order->id)
-                ->where('dish_id', $dish->id)
-                ->get();
-        }
-
         return view('admin.orders.show', compact('order', 'dishes'));
     }
 }

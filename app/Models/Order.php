@@ -13,6 +13,6 @@ class Order extends Model
     protected $fillable = ['interested_user_name', 'interested_user_surname', 'interested_user_address', 'interested_user_email', 'interested_user_phone'];
 
     public function dishes(){
-        return $this->belongsToMany(Dish::class);
+        return $this->belongsToMany(Dish::class)->withPivot('dish_quantity');
     }
 }
