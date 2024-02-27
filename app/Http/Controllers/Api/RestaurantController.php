@@ -12,16 +12,32 @@ class RestaurantController extends Controller
 {
     public function index(Request $request)
     {
-        // Codice per ottenere tutti i ristoranti
-        
-        if(!$request->has('type_id') && !$request->has('restaurant_id')) {
+        // Codice per ottenere 6 ristoranti
+
+        // Se la richiesta NON ha parametri
+        if (!$request->has('type_id') && !$request->has('restaurant_id')) {
+            // Prendo tutti i ristoranti
             $restaurants = Restaurant::all();
+
+            // Inizializzo un nuovo array che conterrà i 6 ristoranti da mandare
+            $restaurants_to_send = [];
+
+            // Fintanto che la lunghezza dell'array è minore di 6
+            while (sizeof($restaurants_to_send) < 6) {
+                $rnd_index = rand(0, sizeof($restaurants) - 1);
+                // Fintanto che nell'array non c'è il ristorante preso randomicamente dalla collection dei ristoranti
+                while (!in_array($restaurants["{$rnd_index}"], $restaurants_to_send)) {
+                    // Pusho nell'array dei 6 ristoranti da mandare il ristorante NON presente nel suddetto
+                    $restaurants_to_send[] = $restaurants["{$rnd_index}"];
+                }
+            }
+
             return response()->json([
-                'results' => $restaurants,
+                'results' => $restaurants_to_send,
                 'success' => true
             ]);
         }
-        
+
         // Singolo ristorante
 
         if ($request->has('restaurant_id')) {
@@ -41,7 +57,7 @@ class RestaurantController extends Controller
             foreach ($types_id as $type_id) {
                 $restaurantsApi->whereHas('types', fn ($query) => $query->where('id', $type_id));
             }
-            
+
             // Se non è stato trovato nessun ristorante
             $restaurants = $restaurantsApi->get();
             if ($restaurants->isEmpty()) {
