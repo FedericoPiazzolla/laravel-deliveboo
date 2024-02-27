@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\DishController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\TypeController;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+     return $request->user();
+ });
+
+Route::get('/restaurants', [RestaurantController::class,'index']);
+//Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
+
+Route::get('/types', [TypeController::class, 'index']);
+//Route::get('/types/{id}', [TypeController::class, 'show']);
+
+Route::get('/dishes', [DishController::class, 'index']);
+//Route::get('/dishes/{restaurant_id}', [DishController::class, 'show']);
+
+Route::post('/order', [OrderController::class, 'store']);

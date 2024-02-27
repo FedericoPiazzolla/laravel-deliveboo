@@ -19,9 +19,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'surname',
         'password',
+        'email',
+        'vat_number',
     ];
+
+    public function restaurant() {
+        return $this->hasOne(Restaurant::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

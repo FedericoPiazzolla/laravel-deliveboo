@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\Admin\TrashController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +24,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])
+    ->name('admin.')
+    ->prefix('admin')
+    ->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('dishes', DishController::class)->parameters(['dishes' => 'dish:slug']);
+    
+    Route::get('trash', [TrashController::class, 'trash'])->name('trash');
+    Route::post('restore/{dish}', [TrashController::class, 'restore'])->withTrashed()->name('dishes.restore');
+    Route::delete("def_destroy/{dish}", [TrashController::class, "defDestroy"])->withTrashed()->name('dishes.def_destroy');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // ordini
+    Route::get('orders',[OrderController::class, 'index'])->name('orders');
+    Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 });
+
 
 require __DIR__.'/auth.php';

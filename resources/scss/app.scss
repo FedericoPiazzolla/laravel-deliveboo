@@ -1,1 +1,121 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
+
+// Navbar
+nav {
+    background-color: $main_dark_green;
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            a {
+                color: $main_orange;
+            }
+        }
+    }
+}
+
+// Homepage
+body {
+    background-color: $main_bg;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+// Login Page
+
+.login_class {
+    .card {
+        .card-header {
+            background-color: $main_dark_green;
+            color: $main_orange;
+        }
+
+        .card-body {
+            label {
+                color: $main_dark_green;
+            }
+            button {
+                background-color: $main_dark_green;
+                color: $main_orange;
+            }
+
+            #forgot-psw {
+                text-decoration: none;
+                color: $main_dark_green;
+            }
+        }
+    }
+}
+
+// Registration Page
+.errorFormMsg {
+    color: red;
+    font-size: smaller;
+}
+
+// DASHBOARD
+
+// header
+header {
+    background-color: $main_red;
+    height: 100px;
+
+    .logo_laravel {
+        max-width: 100%;
+        img {
+            max-width: 25%;
+        }
+    }
+
+    .navbar-nav {
+        a {
+            color: $main_bg;
+        }
+    }
+}
+
+// main
+.ms_main-content {
+    height: calc(100vh - 100px);
+}
+.dashboard_class {
+    .card-header {
+        background-color: $main_dark_green;
+        color: $main_bg;
+    }
+
+    .card-body {
+        color: $main_dark_green;
+
+        .restaurant_name {
+            color: $main_red;
+        }
+    }
+}
+
+// sidebar
+.sidebar {
+    background-color: $main_red;
+    border: 2px solid $main_dark_green;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+    a {
+        color: $main_bg;
+    }
+    a:hover {
+        color: $main_dark_green;
+        background-color: $main_bg;
+    }
+
+    .link_selected {
+        background-color: $main_dark_green;
+    }
+}
