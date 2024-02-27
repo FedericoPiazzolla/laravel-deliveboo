@@ -19,7 +19,8 @@ class TypesTableSeeder extends Seeder
 
         foreach ($types as $type) {
             $new_type = new Type();
-            $new_type->name = $type;
+            $new_type->name = $type["name"];
+            $new_type->icon = $type["icon"];
 
             $new_type->save();
         }

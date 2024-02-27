@@ -1,15 +1,51 @@
 <?php
 return [
-  "Italiano", //1
-  "Giapponese", //2
-  "Cinese", //3
-  "Gelateria", //4
-  "Pesce", //5
-  "Carne", //6
-  "Pizza", //7
-  "FastFood", //8
-  "Kebab", //9
-  "Colazione", //10
-  "Vegetariano", //11
-  "Indiano" //12
+  [
+      "name" => "Italiano",
+      "icon" => "italian.png",
+  ],
+  [
+      "name" => "Giapponese",
+      "icon" => "japanese.png",
+  ],
+  [
+      "name" => "Cinese",
+      "icon" => "chinese.png",
+  ],
+  [
+      "name" => "Gelateria",
+      "icon" => "icecream.png",
+  ],
+  [
+      "name" => "Pesce",
+      "icon" => "fish.webp",
+  ],
+  [
+      "name" => "Carne",
+      "icon" => "meat.png",
+  ],
+  [
+      "name" => "Pizza",
+      "icon" => "pizza.png",
+  ],
+  [
+      "name" => "FastFood",
+      "icon" => "fastfood.png",
+  ],
+  [
+      "name" => "Kebab",
+      "icon" => "kebab.png",
+  ],
+  [
+      "name" => "Colazione",
+      "icon" => "breakfast.webp",
+  ],
+  [
+      "name" => "Vegetariano",
+      "icon" => "vegetarian.png",
+  ],
+  [
+      "name" => "Indiano",
+      "icon" => "indian.png",
+  ],
 ];
