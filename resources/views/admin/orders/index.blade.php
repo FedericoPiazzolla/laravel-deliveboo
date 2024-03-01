@@ -6,6 +6,7 @@
   <table class="table">
       <thead>
           <tr>
+              <th scope="col">Data</th>
               <th scope="col">Id</th>
               <th scope="col">Email utente</th>
               <th scope="col">Indirizzo utente</th>
@@ -16,7 +17,8 @@
       <tbody>
           @foreach ($orders as $order)
               <tr>
-                  <th scope="row">{{ $order->id }}</th>
+                  <th scope="row">{{ $order->created_at }}</th>
+                  <td>{{ $order->id }}</td>
                   <td>{{$order->interested_user_email}}</td>
                   <td>{{$order->interested_user_address}}</td>
                   <td>{{$order->interested_user_phone}}</td>

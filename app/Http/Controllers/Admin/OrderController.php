@@ -20,7 +20,8 @@ class OrderController extends Controller
             $restaurant = Restaurant::where('user_id', $user->id)->first();
                 $query->where('restaurant_id', $restaurant->id);
             })->get();
-
+           
+        
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -34,6 +35,13 @@ class OrderController extends Controller
 
         // Creo un array in cui pusherò il prezzo di ogni piatto
         $dishes_prices = [];
+
+        //controllo
+        $dish = $dishes[0];
+
+        if($dish->restaurant->user_id !== Auth::user()->id) {
+            abort(404);
+        }
 
         // Per ogni piatto dell'ordine ne pusho il prezzo nell'array dei prezzi appena creato
         foreach ($dishes as $dish) {

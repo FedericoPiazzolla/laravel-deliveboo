@@ -7,16 +7,16 @@
     <table class="table mb-3">
         <thead>
             <tr>
-                <th scope="col">Id piatto</th>
                 <th scope="col">Nome piatto</th>
+                <th scope="col">Prezzo</th>
                 <th scope="col">Quantità</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($dishes as $dish)
                 <tr>
-                    <th scope="row">{{ $dish->id }}</th>
-                    <td>{{ $dish->name }}</td>
+                    <th scope="row">{{ $dish->name }}</th>
+                    <td>{{ $dish->price }} &euro;</td>
                     <td><span class="ms-4">{{ $dish->pivot->dish_quantity }}</span></td>
                 </tr>
             @endforeach
