@@ -42,7 +42,7 @@
 
         {{-- Preview image --}}
         <div class="">
-            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
+            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="{{ Str::startsWith($dish->image, 'http') ? $dish->image : asset("storage/".$dish->image)}}" />
         </div>
 
         {{-- Errore img --}}

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\BraintreeController;
 use App\Http\Controllers\Api\DishController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\SingleOrderController;
 use App\Http\Controllers\Api\TypeController;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -31,5 +33,9 @@ Route::get('/types', [TypeController::class, 'index']);
 
 Route::get('/dishes', [DishController::class, 'index']);
 //Route::get('/dishes/{restaurant_id}', [DishController::class, 'show']);
+
+Route::get('/show-order', [SingleOrderController::class, 'show']);
+
+Route::get('/braintree/token', [BraintreeController::class, 'generateToken']);
 
 Route::post('/order', [OrderController::class, 'store']);
