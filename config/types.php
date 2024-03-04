@@ -18,7 +18,7 @@ return [
   ],
   [
       "name" => "Pesce",
-      "icon" => "fish.webp",
+      "icon" => "fish.png",
   ],
   [
       "name" => "Carne",
