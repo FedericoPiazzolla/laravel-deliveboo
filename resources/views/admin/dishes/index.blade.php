@@ -17,9 +17,9 @@
 <table class="table table-striped mt-5">
     <thead>
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">nome</th>
-            <th scope="col">prezzo</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Prezzo</th>
             <th class="text-center" scope="col">Azioni</th>
         </tr>
     </thead>
