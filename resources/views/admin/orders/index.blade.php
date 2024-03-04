@@ -32,7 +32,9 @@
             </table>
         @else
         <div class="d-flex flex-column align-items-center mb-4">
-            <h4 class="text-center mb-4">Non ci sono ordini da visualizzare.</h4>
+            <div class="alert alert-warning w-100">
+            <h4 class="text-center mb-2">Non ci sono ordini da visualizzare.</h4>
+            </div>
             <a href="{{ URL::previous() }}" class="btn btn-warning float-end">Indietro</a>
         </div>
         @endif
