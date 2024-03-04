@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-@vite([ 'resources/js/registrationForm.js' ])
+{{-- @vite([ 'resources/js/registrationForm.js' ]) --}}
+
+@vite(['resources/js/registrationForm.js'])
+
 
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -102,7 +105,7 @@
                             <div class="col-md-6">
                                 <input id="restaurant_name" type="text" class="form-control @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{ old('restaurant_name') }}" required autocomplete="name" autofocus>
 
-                                {{-- Errore nome ristoranre --}}
+                                {{-- Errore nome ristorante --}}
                                 <span>
                                     <strong id="restaurantNameError" class='errorFormMsg ms-1'></strong>
                                 </span>
@@ -128,6 +131,12 @@
 
                             <div class="col-md-6">
                                 <input id="restaurant_image" type="file" class="form-control @error('restaurant_image') is-invalid @enderror" name="restaurant_image" value="{{ old('restaurant_image') }}" required autocomplete="name" autofocus accept=".jpg, .jpeg, .svg, .png, .bpm, .gif, .webp">
+
+
+                                {{-- Preview image --}}
+                                <div class="">
+                                    <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block" src="" />
+                                </div>
 
                                  {{-- Errore image --}}
                                  <span>
