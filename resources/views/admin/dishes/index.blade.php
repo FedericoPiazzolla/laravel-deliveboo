@@ -20,7 +20,7 @@
             <th scope="col">id</th>
             <th scope="col">nome</th>
             <th scope="col">prezzo</th>
-            <th class="text-center" scope="col">Actions</th>
+            <th class="text-center" scope="col">Azioni</th>
         </tr>
     </thead>
 
