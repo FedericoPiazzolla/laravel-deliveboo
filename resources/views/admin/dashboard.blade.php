@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <h4 class="mb-4"> Bentornato {{ Auth::user()->name }}! ecco il tuo ristorante:</h4>
+                        <h4 class="mb-4"> Bentornato {{ Auth::user()->name }}! Ecco il tuo ristorante:</h4>
                         <h1 class="text-center mb-4" style="color: #173736">{{ $restaurant->restaurant_name }}</h1>
 
                         <div class="text-center">

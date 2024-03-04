@@ -56,7 +56,7 @@
   @else
     <div class="d-flex flex-column align-items-center mb-4">
         <h1 class="text-center mb-4">Il tuo cestino è vuoto</h1>
-        <a href="{{ route('admin.dishes.index') }}" class="btn btn-warning float-end">Indietro</a>
+        <a href="{{ URL::previous() }}" class="btn btn-warning float-end">Indietro</a>
     </div>
   @endif
   @include('admin.partials.modal')
