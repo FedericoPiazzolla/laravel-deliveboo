@@ -50,8 +50,8 @@ class RegisteredUserController extends Controller
             
 
             // restaurant validations
-            'restaurant_image' => ['image', 'max:512'],
-            'restaurant_logo' => ['image', 'max:512'],
+            'restaurant_image' => ['image'],
+            'restaurant_logo' => ['image'],
             'restaurant_email' => ['required', 'string', 'email', 'max:255', 'unique:'.Restaurant::class],
             // ^
         ]);
