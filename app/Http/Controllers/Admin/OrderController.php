@@ -19,7 +19,7 @@ class OrderController extends Controller
             $user = User::where('id', Auth::user()->id)->first();
             $restaurant = Restaurant::where('user_id', $user->id)->first();
                 $query->where('restaurant_id', $restaurant->id);
-            })->get();
+            })->orderBy('created_at', 'DESC')->get();
            
         
         return view('admin.orders.index', compact('orders'));
