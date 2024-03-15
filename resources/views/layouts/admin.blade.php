@@ -57,7 +57,7 @@
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
         aggiungere i link necessari giorno per giorno
         -->
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse p-0">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse p-0 position-fixed h-75">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column mt-2">
                             <li class="nav-item">
