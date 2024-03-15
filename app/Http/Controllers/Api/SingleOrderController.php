@@ -12,6 +12,8 @@ class SingleOrderController extends Controller
         // Prendo l'ordine coi suoi piatti
         $order = Order::with('dishes')->where('id', $request->order_id)->first();
 
+        $order_info = Order::select('interested_user_name', 'interested_user_surname', 'interested_user_address', 'interested_user_email', 'interested_user_phone')->where('id', $request->order_id)->first();
+
         // Prendo i piatti dell'ordine
         $dishes = $order->dishes;
 
@@ -27,6 +29,7 @@ class SingleOrderController extends Controller
         $total = array_sum($dishes_prices);
 
         return response()->json([
+            "order_info" => $order_info,
             "dishes" => $dishes,
             "total" => $total,
         ]);
